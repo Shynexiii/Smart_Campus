@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-
-using System.Runtime.Remoting;
-using System.Runtime.Remoting.Channels;
-using System.Runtime.Remoting.Channels.Tcp;
 using System.Collections;
 
 namespace Directeur
@@ -29,24 +25,31 @@ namespace Directeur
 
         private void AfficherChercheur()
         {
-            tbLastName.Text = "";
-            TbFirstName.Text = "";
-            CbRole.Text = "";
-            listView1.Items.Clear();
-            ArrayList rowList = Program.obj.ConsulterChercheur();
-            
-            foreach (object[] row in rowList)
+            try
             {
-                string[] values = new string[row.Length];
-                int columnIndex = 0;
+                tbLastName.Text = "";
+                TbFirstName.Text = "";
+                CbRole.Text = "";
+                listView1.Items.Clear();
+                ArrayList rowList = Program.obj.ConsulterChercheur();
 
-                foreach (object column in row)
+                foreach (object[] row in rowList)
                 {
-                    values[columnIndex++] = Convert.ToString(column);
-                }
+                    string[] values = new string[row.Length];
+                    int columnIndex = 0;
 
-                ListViewItem newItem = new ListViewItem(values);
-                listView1.Items.Add(newItem);
+                    foreach (object column in row)
+                    {
+                        values[columnIndex++] = Convert.ToString(column);
+                    }
+
+                    ListViewItem newItem = new ListViewItem(values);
+                    listView1.Items.Add(newItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -72,14 +75,7 @@ namespace Directeur
 
         private void Chercheur_Load(object sender, EventArgs e)
         {
-            try
-            {
-                AfficherChercheur();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            AfficherChercheur();
         }
 
         private void BtnEditChercheure_Click(object sender, EventArgs e)

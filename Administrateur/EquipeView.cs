@@ -16,5 +16,10 @@ namespace Administrateur
         {
             InitializeComponent();
         }
+
+        private void EquipeView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -183,6 +183,7 @@ namespace Administrateur
             this.Controls.Add(this.BtnAddTeam);
             this.Name = "EquipeView";
             this.Size = new System.Drawing.Size(812, 319);
+            this.Load += new System.EventHandler(this.EquipeView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

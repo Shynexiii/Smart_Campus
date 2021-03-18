@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -17,35 +10,35 @@ namespace Administrateur
         public ChercheurView()
         {
             InitializeComponent();
+            AfficherChercheur();
+        }
+        private void AfficherChercheur()
+        {
             try
             {
-                AfficherChercheur();
+                tbLastName.Text = "";
+                TbFirstName.Text = "";
+                CbRole.Text = "";
+                listView1.Items.Clear();
+                ArrayList rowList = new IGestionLaboImpl().ConsulterChercheur();
+
+                foreach (object[] row in rowList)
+                {
+                    string[] values = new string[row.Length];
+                    int columnIndex = 0;
+
+                    foreach (object column in row)
+                    {
+                        values[columnIndex++] = Convert.ToString(column);
+                    }
+
+                    ListViewItem newItem = new ListViewItem(values);
+                    listView1.Items.Add(newItem);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-        }
-        private void AfficherChercheur()
-        {
-            tbLastName.Text = "";
-            TbFirstName.Text = "";
-            CbRole.Text = "";
-            listView1.Items.Clear();
-            ArrayList rowList = IGestionLaboImplServer.ConsulterChercheur();
-
-            foreach (object[] row in rowList)
-            {
-                string[] values = new string[row.Length];
-                int columnIndex = 0;
-
-                foreach (object column in row)
-                {
-                    values[columnIndex++] = Convert.ToString(column);
-                }
-
-                ListViewItem newItem = new ListViewItem(values);
-                listView1.Items.Add(newItem);
             }
         }
 
@@ -54,7 +47,7 @@ namespace Administrateur
             try
             {
                 IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(TbFirstName.Text, tbLastName.Text, CbRole.SelectedIndex.ToString());
-                bool value = IGestionLaboImplServer.CreerChercheur(chercheur);
+                bool value = new IGestionLaboImpl().CreerChercheur(chercheur);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
             }
@@ -69,7 +62,7 @@ namespace Administrateur
             int id = Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             try
             {
-                bool value = IGestionLaboImplServer.SupprimerChercheur(id);
+                bool value = new IGestionLaboImpl().SupprimerChercheur(id);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
             }
@@ -88,7 +81,7 @@ namespace Administrateur
             try
             {
                 IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(LastName, FirstName, Role);
-                bool value =  IGestionLaboImplServer.ModifierChercheur(chercheur, id);
+                bool value = new IGestionLaboImpl().ModifierChercheur(chercheur, id);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
             }
@@ -105,14 +98,7 @@ namespace Administrateur
 
         private void ChercheurView_Load(object sender, EventArgs e)
         {
-            try
-            {
-                AfficherChercheur();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            AfficherChercheur();
         }
 
         private void listView1_Click(object sender, EventArgs e)

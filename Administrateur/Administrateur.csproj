@@ -111,7 +111,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IGestionLaboImplServer.cs" />
+    <Compile Include="functions.cs" />
     <Compile Include="IGestionLaboImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
