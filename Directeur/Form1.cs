@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Directeur
 {
@@ -17,22 +11,21 @@ namespace Directeur
             InitializeComponent();
             chercheur1.Show();
             equipe1.Hide();
+            chercheur1.AfficherChercheur();
         }
 
         private void BtnChercheure_Click(object sender, EventArgs e)
         {
             chercheur1.Show();
             equipe1.Hide();
+            chercheur1.AfficherChercheur();
         }
 
         private void BtnEquipe_Click(object sender, EventArgs e)
         {
             chercheur1.Hide();
             equipe1.Show();
-        }
-
-        private void equipe1_Load(object sender, EventArgs e)
-        {
+            equipe1.AfficherEquipe();
 
         }
     }

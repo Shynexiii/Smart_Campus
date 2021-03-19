@@ -37,8 +37,12 @@ namespace Administrateur
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.equipeView1 = new Administrateur.EquipeView();
+            this.BtnRole = new System.Windows.Forms.Button();
+            this.BtnLaboratoire = new System.Windows.Forms.Button();
             this.chercheurView1 = new Administrateur.ChercheurView();
+            this.equipeView1 = new Administrateur.EquipeView();
+            this.roleView1 = new Administrateur.RoleView();
+            this.laboratoireView1 = new Administrateur.LaboratoireView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,6 +64,8 @@ namespace Administrateur
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.BtnLaboratoire);
+            this.panel4.Controls.Add(this.BtnRole);
             this.panel4.Controls.Add(this.BtnEquipe);
             this.panel4.Controls.Add(this.BtnChercheure);
             this.panel4.Location = new System.Drawing.Point(3, 157);
@@ -129,12 +135,25 @@ namespace Administrateur
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrateur";
             // 
-            // equipeView1
+            // BtnRole
             // 
-            this.equipeView1.Location = new System.Drawing.Point(169, 3);
-            this.equipeView1.Name = "equipeView1";
-            this.equipeView1.Size = new System.Drawing.Size(812, 319);
-            this.equipeView1.TabIndex = 4;
+            this.BtnRole.Location = new System.Drawing.Point(3, 85);
+            this.BtnRole.Name = "BtnRole";
+            this.BtnRole.Size = new System.Drawing.Size(156, 35);
+            this.BtnRole.TabIndex = 3;
+            this.BtnRole.Text = "Roles";
+            this.BtnRole.UseVisualStyleBackColor = true;
+            this.BtnRole.Click += new System.EventHandler(this.BtnRole_Click);
+            // 
+            // BtnLaboratoire
+            // 
+            this.BtnLaboratoire.Location = new System.Drawing.Point(3, 126);
+            this.BtnLaboratoire.Name = "BtnLaboratoire";
+            this.BtnLaboratoire.Size = new System.Drawing.Size(156, 35);
+            this.BtnLaboratoire.TabIndex = 4;
+            this.BtnLaboratoire.Text = "Laboratoires";
+            this.BtnLaboratoire.UseVisualStyleBackColor = true;
+            this.BtnLaboratoire.Click += new System.EventHandler(this.BtnLaboratoire_Click);
             // 
             // chercheurView1
             // 
@@ -143,18 +162,43 @@ namespace Administrateur
             this.chercheurView1.Size = new System.Drawing.Size(812, 319);
             this.chercheurView1.TabIndex = 5;
             // 
+            // equipeView1
+            // 
+            this.equipeView1.Location = new System.Drawing.Point(169, 3);
+            this.equipeView1.Name = "equipeView1";
+            this.equipeView1.Size = new System.Drawing.Size(812, 319);
+            this.equipeView1.TabIndex = 4;
+            // 
+            // roleView1
+            // 
+            this.roleView1.Location = new System.Drawing.Point(169, 3);
+            this.roleView1.Name = "roleView1";
+            this.roleView1.Size = new System.Drawing.Size(812, 319);
+            this.roleView1.TabIndex = 6;
+            // 
+            // laboratoireView1
+            // 
+            this.laboratoireView1.Location = new System.Drawing.Point(169, 3);
+            this.laboratoireView1.Name = "laboratoireView1";
+            this.laboratoireView1.Size = new System.Drawing.Size(812, 319);
+            this.laboratoireView1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.laboratoireView1);
+            this.Controls.Add(this.roleView1);
             this.Controls.Add(this.chercheurView1);
             this.Controls.Add(this.equipeView1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Administrateur";
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -177,6 +221,10 @@ namespace Administrateur
         private System.Windows.Forms.Label label1;
         private EquipeView equipeView1;
         private ChercheurView chercheurView1;
+        private System.Windows.Forms.Button BtnLaboratoire;
+        private System.Windows.Forms.Button BtnRole;
+        private RoleView roleView1;
+        private LaboratoireView laboratoireView1;
     }
 }
 

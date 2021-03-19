@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections;
+using MySql.Data.MySqlClient;
 
 namespace Directeur
 {
     public partial class Chercheur : UserControl
     {
-
-        
         public Chercheur()
         {
             InitializeComponent();
@@ -23,15 +22,36 @@ namespace Directeur
             
         }
 
-        private void AfficherChercheur()
+        public void AfficherChercheur()
         {
             try
             {
                 tbLastName.Text = "";
                 TbFirstName.Text = "";
                 CbRole.Text = "";
+                CbRole.Items.Clear();
                 listView1.Items.Clear();
+                CbLaboratoire.Text = "";
+                CbLaboratoire.Items.Clear();
                 ArrayList rowList = Program.obj.ConsulterChercheur();
+
+                MySqlDataReader role = Program.obj.ConsulterRoleReader();
+                MySqlDataReader labo = Program.obj.ConsulterLaboratoireReader();
+
+                string laboName;
+                while (labo.Read())
+                {
+                    laboName = (string)labo[1];
+                    CbLaboratoire.Items.Add(laboName);
+                }
+
+
+                string roleName;
+                while (role.Read())
+                {
+                    roleName = (string)role[1];
+                    CbRole.Items.Add(roleName);
+                }
 
                 foreach (object[] row in rowList)
                 {
@@ -57,7 +77,9 @@ namespace Directeur
         {
             try
             {
-                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(TbFirstName.Text, tbLastName.Text,CbRole.SelectedIndex.ToString());
+                int id_lab = CbLaboratoire.SelectedIndex + 1;
+                int Role_id = CbRole.SelectedIndex + 1;
+                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(TbFirstName.Text, tbLastName.Text, Role_id, id_lab);
                 bool value = Program.obj.CreerChercheur(chercheur);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
@@ -67,12 +89,6 @@ namespace Directeur
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Chercheur_Load(object sender, EventArgs e)
         {
             AfficherChercheur();
@@ -82,11 +98,12 @@ namespace Directeur
         {
             string LastName = tbLastName.Text;
             string FirstName = TbFirstName.Text;
-            string Role = CbRole.SelectedIndex.ToString();
+            int Role_id = CbRole.SelectedIndex + 1;
+            int id_lab = CbLaboratoire.SelectedIndex + 1;
             int id = Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             try
             {
-                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(LastName, FirstName, Role);
+                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(LastName, FirstName, Role_id, id_lab);
                 bool value = Program.obj.ModifierChercheur(chercheur, id);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
@@ -101,7 +118,8 @@ namespace Directeur
         {
             TbFirstName.Text = listView1.SelectedItems[0].SubItems[1].Text;
             tbLastName.Text = listView1.SelectedItems[0].SubItems[2].Text;
-            CbRole.SelectedIndex = Int32.Parse(listView1.SelectedItems[0].SubItems[3].Text);
+            CbRole.Text = listView1.SelectedItems[0].SubItems[3].Text;
+            CbLaboratoire.Text = listView1.SelectedItems[0].SubItems[4].Text;
         }
 
         private void BtnDeleteChercheure_Click(object sender, EventArgs e)
@@ -117,6 +135,11 @@ namespace Directeur
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            AfficherChercheur();
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Directeur
             this.BtnDeleteTeam = new System.Windows.Forms.Button();
             this.BtnEditTeam = new System.Windows.Forms.Button();
             this.BtnAddTeam = new System.Windows.Forms.Button();
+            this.BtnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@ namespace Directeur
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BtnRefresh);
             this.panel1.Controls.Add(this.labelLaboratoire);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
@@ -177,6 +179,16 @@ namespace Directeur
             this.BtnAddTeam.UseVisualStyleBackColor = true;
             this.BtnAddTeam.Click += new System.EventHandler(this.BtnAddTeam_Click);
             // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.Location = new System.Drawing.Point(725, 15);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.BtnRefresh.TabIndex = 2;
+            this.BtnRefresh.Text = "Rafraîchir";
+            this.BtnRefresh.UseVisualStyleBackColor = true;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
+            // 
             // Equipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,5 +226,6 @@ namespace Directeur
         private System.Windows.Forms.Button BtnDeleteTeam;
         private System.Windows.Forms.Button BtnEditTeam;
         private System.Windows.Forms.Button BtnAddTeam;
+        private System.Windows.Forms.Button BtnRefresh;
     }
 }

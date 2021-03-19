@@ -111,6 +111,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IGestionEquipeImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Chercheur.resx">
@@ -147,6 +148,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Function\Function.csproj">
+      <Project>{B2769A4E-349B-41EE-9A95-504FF88A72FD}</Project>
+      <Name>Function</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IGestionEquipe\IGestionEquipe.csproj">
+      <Project>{412961e2-c5ac-4061-854a-e64f1a08ffa3}</Project>
+      <Name>IGestionEquipe</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IGestionLabo\IGestionLabo.csproj">
       <Project>{5f122cd7-fb7b-40ba-8d30-8f231980988e}</Project>
       <Name>IGestionLabo</Name>

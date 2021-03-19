@@ -135,7 +135,6 @@ namespace Directeur
             this.equipe1.Name = "equipe1";
             this.equipe1.Size = new System.Drawing.Size(812, 319);
             this.equipe1.TabIndex = 4;
-            this.equipe1.Load += new System.EventHandler(this.equipe1_Load);
             // 
             // chercheur1
             // 
@@ -152,8 +151,9 @@ namespace Directeur
             this.Controls.Add(this.equipe1);
             this.Controls.Add(this.chercheur1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Directeur";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

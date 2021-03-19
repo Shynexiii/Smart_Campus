@@ -37,6 +37,7 @@ namespace Administrateur
             this.BtnEditChercheure = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.laboratoire = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelChercheure = new System.Windows.Forms.Label();
             this.CbRole = new System.Windows.Forms.ComboBox();
@@ -46,13 +47,15 @@ namespace Administrateur
             this.TbFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CbLaboratoire = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnAddChercheure
             // 
-            this.BtnAddChercheure.Location = new System.Drawing.Point(5, 217);
+            this.BtnAddChercheure.Location = new System.Drawing.Point(5, 244);
             this.BtnAddChercheure.Name = "BtnAddChercheure";
             this.BtnAddChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnAddChercheure.TabIndex = 28;
@@ -67,17 +70,17 @@ namespace Administrateur
             // 
             // lastname
             // 
-            this.lastname.Text = "Prénom";
+            this.lastname.Text = "Nom";
             this.lastname.Width = 100;
             // 
             // firstname
             // 
-            this.firstname.Text = "Nom";
+            this.firstname.Text = "Prénom";
             this.firstname.Width = 100;
             // 
             // BtnDeleteChercheure
             // 
-            this.BtnDeleteChercheure.Location = new System.Drawing.Point(221, 217);
+            this.BtnDeleteChercheure.Location = new System.Drawing.Point(221, 244);
             this.BtnDeleteChercheure.Name = "BtnDeleteChercheure";
             this.BtnDeleteChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnDeleteChercheure.TabIndex = 30;
@@ -87,7 +90,7 @@ namespace Administrateur
             // 
             // BtnEditChercheure
             // 
-            this.BtnEditChercheure.Location = new System.Drawing.Point(113, 217);
+            this.BtnEditChercheure.Location = new System.Drawing.Point(113, 244);
             this.BtnEditChercheure.Name = "BtnEditChercheure";
             this.BtnEditChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnEditChercheure.TabIndex = 29;
@@ -102,7 +105,8 @@ namespace Administrateur
             this.id,
             this.firstname,
             this.lastname,
-            this.role});
+            this.role,
+            this.laboratoire});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
@@ -117,6 +121,11 @@ namespace Administrateur
             // id
             // 
             this.id.Text = "#Id";
+            // 
+            // laboratoire
+            // 
+            this.laboratoire.Text = "Laboratoire";
+            this.laboratoire.Width = 150;
             // 
             // panel1
             // 
@@ -153,7 +162,7 @@ namespace Administrateur
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 110);
+            this.label3.Location = new System.Drawing.Point(7, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 18);
             this.label3.TabIndex = 8;
@@ -197,6 +206,8 @@ namespace Administrateur
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CbLaboratoire);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.CbRole);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbLastName);
@@ -205,10 +216,32 @@ namespace Administrateur
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(291, 148);
+            this.groupBox1.Size = new System.Drawing.Size(291, 176);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Créartion / Modification";
+            // 
+            // CbLaboratoire
+            // 
+            this.CbLaboratoire.FormattingEnabled = true;
+            this.CbLaboratoire.Items.AddRange(new object[] {
+            "",
+            "Chef d\'équipe",
+            "Chercheur"});
+            this.CbLaboratoire.Location = new System.Drawing.Point(96, 146);
+            this.CbLaboratoire.Name = "CbLaboratoire";
+            this.CbLaboratoire.Size = new System.Drawing.Size(150, 21);
+            this.CbLaboratoire.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 18);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Laboratoire";
             // 
             // ChercheurView
             // 
@@ -250,5 +283,8 @@ namespace Administrateur
         private System.Windows.Forms.TextBox TbFirstName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ColumnHeader laboratoire;
+        private System.Windows.Forms.ComboBox CbLaboratoire;
+        private System.Windows.Forms.Label label4;
     }
 }

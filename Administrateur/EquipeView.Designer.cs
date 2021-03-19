@@ -30,15 +30,16 @@ namespace Administrateur
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnRefresh = new System.Windows.Forms.Button();
             this.labelLaboratoire = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.laboratoire = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CbTeamLaboratoire = new System.Windows.Forms.ComboBox();
+            this.CbLaboratoire = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbTeamName = new System.Windows.Forms.TextBox();
+            this.TbTeamName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnDeleteTeam = new System.Windows.Forms.Button();
             this.BtnEditTeam = new System.Windows.Forms.Button();
@@ -50,11 +51,22 @@ namespace Administrateur
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BtnRefresh);
             this.panel1.Controls.Add(this.labelLaboratoire);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(805, 50);
             this.panel1.TabIndex = 30;
+            // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.Location = new System.Drawing.Point(725, 15);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.BtnRefresh.TabIndex = 35;
+            this.BtnRefresh.Text = "Rafraîchir";
+            this.BtnRefresh.UseVisualStyleBackColor = true;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // labelLaboratoire
             // 
@@ -73,6 +85,8 @@ namespace Administrateur
             this.id,
             this.nom,
             this.laboratoire});
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(300, 62);
             this.listView1.Name = "listView1";
@@ -80,6 +94,7 @@ namespace Administrateur
             this.listView1.TabIndex = 29;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // id
             // 
@@ -97,9 +112,9 @@ namespace Administrateur
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.CbTeamLaboratoire);
+            this.groupBox1.Controls.Add(this.CbLaboratoire);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.tbTeamName);
+            this.groupBox1.Controls.Add(this.TbTeamName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(3, 62);
             this.groupBox1.Name = "groupBox1";
@@ -108,13 +123,13 @@ namespace Administrateur
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Créartion / Modification";
             // 
-            // CbTeamLaboratoire
+            // CbLaboratoire
             // 
-            this.CbTeamLaboratoire.FormattingEnabled = true;
-            this.CbTeamLaboratoire.Location = new System.Drawing.Point(110, 67);
-            this.CbTeamLaboratoire.Name = "CbTeamLaboratoire";
-            this.CbTeamLaboratoire.Size = new System.Drawing.Size(150, 21);
-            this.CbTeamLaboratoire.TabIndex = 13;
+            this.CbLaboratoire.FormattingEnabled = true;
+            this.CbLaboratoire.Location = new System.Drawing.Point(110, 67);
+            this.CbLaboratoire.Name = "CbLaboratoire";
+            this.CbLaboratoire.Size = new System.Drawing.Size(150, 21);
+            this.CbLaboratoire.TabIndex = 13;
             // 
             // label4
             // 
@@ -126,13 +141,13 @@ namespace Administrateur
             this.label4.TabIndex = 10;
             this.label4.Text = "Laboratoire";
             // 
-            // tbTeamName
+            // TbTeamName
             // 
-            this.tbTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTeamName.Location = new System.Drawing.Point(110, 26);
-            this.tbTeamName.Name = "tbTeamName";
-            this.tbTeamName.Size = new System.Drawing.Size(150, 23);
-            this.tbTeamName.TabIndex = 7;
+            this.TbTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbTeamName.Location = new System.Drawing.Point(110, 26);
+            this.TbTeamName.Name = "TbTeamName";
+            this.TbTeamName.Size = new System.Drawing.Size(150, 23);
+            this.TbTeamName.TabIndex = 7;
             // 
             // label2
             // 
@@ -152,6 +167,7 @@ namespace Administrateur
             this.BtnDeleteTeam.TabIndex = 34;
             this.BtnDeleteTeam.Text = "Supprimer";
             this.BtnDeleteTeam.UseVisualStyleBackColor = true;
+            this.BtnDeleteTeam.Click += new System.EventHandler(this.BtnDeleteTeam_Click);
             // 
             // BtnEditTeam
             // 
@@ -161,6 +177,7 @@ namespace Administrateur
             this.BtnEditTeam.TabIndex = 33;
             this.BtnEditTeam.Text = "Modifier";
             this.BtnEditTeam.UseVisualStyleBackColor = true;
+            this.BtnEditTeam.Click += new System.EventHandler(this.BtnEditTeam_Click);
             // 
             // BtnAddTeam
             // 
@@ -170,6 +187,7 @@ namespace Administrateur
             this.BtnAddTeam.TabIndex = 32;
             this.BtnAddTeam.Text = "Ajouter";
             this.BtnAddTeam.UseVisualStyleBackColor = true;
+            this.BtnAddTeam.Click += new System.EventHandler(this.BtnAddTeam_Click);
             // 
             // EquipeView
             // 
@@ -183,7 +201,6 @@ namespace Administrateur
             this.Controls.Add(this.BtnAddTeam);
             this.Name = "EquipeView";
             this.Size = new System.Drawing.Size(812, 319);
-            this.Load += new System.EventHandler(this.EquipeView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -201,12 +218,13 @@ namespace Administrateur
         private System.Windows.Forms.ColumnHeader nom;
         private System.Windows.Forms.ColumnHeader laboratoire;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox CbTeamLaboratoire;
+        private System.Windows.Forms.ComboBox CbLaboratoire;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbTeamName;
+        private System.Windows.Forms.TextBox TbTeamName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnDeleteTeam;
         private System.Windows.Forms.Button BtnEditTeam;
         private System.Windows.Forms.Button BtnAddTeam;
+        private System.Windows.Forms.Button BtnRefresh;
     }
 }

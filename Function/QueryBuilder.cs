@@ -1,18 +1,23 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System;
 using System.Collections;
-
-namespace Administrateur
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+namespace Function
 {
-    public class functions
+    public class QueryBuilder
     {
-
         public MySqlConnection connection;
         public string con = "server=localhost; userid=root; password=root; database=uc2_smart_campus";
-        public functions()
+        public QueryBuilder()
         {
-            connection = new MySqlConnection(con);
+            this.connection = new MySqlConnection(con);
         }
-        internal ArrayList All(string query)
+
+        public ArrayList All(string query)
         {
 
             this.connection.Open();
@@ -33,12 +38,28 @@ namespace Administrateur
             return rowList;
         }
 
-        internal bool Create(string query)
+        public MySqlDataReader AllData(string query)
+        {
+
+            this.connection.Open();
+            MySqlCommand requete = new MySqlCommand(query, this.connection);
+            MySqlDataReader reader;
+            reader = requete.ExecuteReader();
+            return reader;
+
+        }
+
+        public bool Select(string query)
         {
             return queryExecute(query);
         }
 
-        internal bool Update(string query)
+        public bool Create(string query)
+        {
+            return queryExecute(query);
+        }
+
+        public bool Update(string query)
         {
             return queryExecute(query);
         }
@@ -56,6 +77,16 @@ namespace Administrateur
             this.connection.Close();
 
             return resultat == -1 ? false : true;
+        }
+
+        public bool GetQueryResult(string query)
+        {
+            this.connection.Open();
+            MySqlDataAdapter requete = new MySqlDataAdapter(query, this.connection);
+            DataTable dt = new DataTable();
+            requete.Fill(dt);
+            return dt.Rows[0][0].ToString() == "1";
+            
         }
     }
 }

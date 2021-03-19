@@ -5,6 +5,8 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Collections;
+using MySql.Data.MySqlClient;
+using Function;
 
 namespace Directeur
 {
@@ -24,11 +26,21 @@ namespace Directeur
             }
         }
 
-        private void AfficherEquipe()
+        public void AfficherEquipe()
         {
             tbTeamName.Text = "";
             CbTeamLaboratoire.Text = "";
+            CbTeamLaboratoire.Items.Clear();
             listView1.Items.Clear();
+
+            MySqlDataReader labo = new Admin().ConsulterLaboratoireReader();
+
+            string name;
+            while (labo.Read())
+            {
+                name = (string)labo[1];
+                CbTeamLaboratoire.Items.Add(name);
+            }
             ArrayList rowList = Program.obj.ConsulterEquipe();
 
             foreach (object[] row in rowList)
@@ -50,8 +62,9 @@ namespace Directeur
         {
             try
             {
+                int id_lab = CbTeamLaboratoire.SelectedIndex + 1;
                 IGestionLabo.Equipe equipe = new IGestionLabo.Equipe(tbTeamName.Text);
-                bool value = Program.obj.CreerEquipe(equipe);
+                bool value = Program.obj.CreerEquipe(equipe, id_lab);
                 MessageBox.Show(value.ToString());
                 AfficherEquipe();
             }
@@ -64,11 +77,12 @@ namespace Directeur
         private void BtnEditTeam_Click(object sender, EventArgs e)
         {
             string Name = tbTeamName.Text;
+            int id_lab = CbTeamLaboratoire.SelectedIndex + 1;
             int id = Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             try
             {
                 IGestionLabo.Equipe equipe = new IGestionLabo.Equipe(Name);
-                bool value = Program.obj.ModifierEquipe(equipe, id);
+                bool value = Program.obj.ModifierEquipe(equipe, id, id_lab);
                 MessageBox.Show(value.ToString());
                 AfficherEquipe();
             }
@@ -108,6 +122,12 @@ namespace Directeur
         private void listView1_Click(object sender, EventArgs e)
         {
             tbTeamName.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            CbTeamLaboratoire.Text = listView1.SelectedItems[0].SubItems[2].Text;
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            AfficherEquipe();
         }
     }
 }
