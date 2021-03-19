@@ -7,13 +7,15 @@ namespace IGestionLabo
     {
         public string Nom { get; set; }
         public string Prenom { get; set; }
-        public string Role { get; set; }
+        public int Role { get; set; }
+        public int Laboratoire { get; set; }
 
-        public Chercheur(string nom, string prenom, string role)
+        public Chercheur(string nom, string prenom, int role, int laboratoire)
         {
             Nom = nom;
             Prenom = prenom;
             Role = role;
+            Laboratoire = laboratoire;
         }
     }
 }

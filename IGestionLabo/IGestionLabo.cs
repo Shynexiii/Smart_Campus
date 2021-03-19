@@ -12,8 +12,8 @@ namespace IGestionLabo
     public interface IGestionLabo
     {
         /**/
-        bool CreerEquipe(Equipe equipe);
-        bool ModifierEquipe(Equipe equipe, int id);
+        bool CreerEquipe(Equipe equipe, int id_lab);
+        bool ModifierEquipe(Equipe equipe, int id, int id_lab);
         bool SupprimerEquipe(int id);
         ArrayList ConsulterEquipe();
 
@@ -23,6 +23,11 @@ namespace IGestionLabo
         bool SupprimerChercheur(int id);
         ArrayList ConsulterChercheur();
 
+        /**/
+        MySqlDataReader ConsulterRoleReader();
+        MySqlDataReader ConsulterLaboratoireReader();
+
+        /**/
         bool ChoisirChef(Chercheur chercheur, Equipe equipe);
         bool AffecterChercheur(Chercheur chercheur, Equipe equipe);
     }
