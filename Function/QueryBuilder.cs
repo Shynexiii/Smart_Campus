@@ -40,15 +40,27 @@ namespace Function
 
         public MySqlDataReader AllData(string query)
         {
-
             this.connection.Open();
             MySqlCommand requete = new MySqlCommand(query, this.connection);
             MySqlDataReader reader;
             reader = requete.ExecuteReader();
             return reader;
-
         }
+        public string[] AllDataArray(string query)
+        {
+            this.connection.Open();
+            MySqlCommand requete = new MySqlCommand(query, this.connection);
+            MySqlDataReader reader;
+            reader = requete.ExecuteReader();
 
+            string[] data = new string[reader.FieldCount];
+            int i = 0;
+            while (reader.Read())
+            {
+                data[i] = reader.GetValue(i).ToString();
+            }
+            return data;
+        }
         public bool Select(string query)
         {
             return queryExecute(query);

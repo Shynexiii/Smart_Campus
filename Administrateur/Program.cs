@@ -29,7 +29,13 @@ namespace Administrateur
             ChannelServices.RegisterChannel(new TcpChannel(value,null,null), false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(IGestionLaboImpl), "IGestionLabo", WellKnownObjectMode.SingleCall);
             
-            Application.Run(new Form1());
+            Login login = new Login();
+
+            Application.Run(login);
+            if (login.UserSuccessfullyAuthenticated)
+            {
+                Application.Run(new Form1(login.user));
+            }
         }
     }
 }

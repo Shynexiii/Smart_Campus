@@ -36,7 +36,6 @@ namespace Function
 
         public bool ModifierRole(Role role, int id)
         {
-
             var query = $"UPDATE roles SET `role`='{role.Name}' WHERE `id`={id};";
             return new QueryBuilder().Update(query);
         }
@@ -76,6 +75,36 @@ namespace Function
         {
             var query = $"DELETE FROM labs WHERE `id`= {id};";
             return new QueryBuilder().Delete(query);
+        }
+
+        public ArrayList login(string email, string password)
+        {
+            string query = $"SELECT * FROM profils WHERE email='{email}' AND password='{password}';";
+            var value = new QueryBuilder().AllData(query);
+            ArrayList arrayList = new ArrayList();
+            
+            while (value.Read())
+            {
+                object[] data = new object[value.FieldCount];
+                value.GetValues(data);
+                arrayList.Add(data);
+            }
+            return arrayList;
+        }
+
+        public ArrayList Consulter(string name)
+        {
+            string query = $"SELECT * FROM {name};";
+            var value = new QueryBuilder().AllData(query);
+            ArrayList arrayList = new ArrayList();
+
+            while (value.Read())
+            {
+                object[] data = new object[value.FieldCount];
+                value.GetValues(data);
+                arrayList.Add(data);
+            }
+            return arrayList;
         }
     }
 }

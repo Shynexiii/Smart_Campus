@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Windows.Forms;
 
 namespace Administrateur
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(ArrayList user)
         {
             InitializeComponent();
             chercheurView1.Show();
@@ -13,7 +14,9 @@ namespace Administrateur
             roleView1.Hide();
             laboratoireView1.Hide();
             chercheurView1.AfficherChercheur();
+            
         }
+
 
         private void BtnChercheure_Click(object sender, EventArgs e)
         {
