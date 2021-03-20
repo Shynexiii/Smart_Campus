@@ -8,18 +8,6 @@ namespace Administrateur
 {
     public class IGestionLaboImpl : MarshalByRefObject, IGestionLabo.IGestionLabo
     {
-        public static string connectionString = "server=localhost; userid=root; password=root; database=uc2_smart_campus";
-
-
-        public bool AffecterChercheur(Chercheur chercheur, Equipe equipe)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool ChoisirChef(Chercheur chercheur, Equipe equipe)
-        {
-            throw new NotImplementedException();
-        }
 
         public ArrayList ConsulterChercheur()
         {
@@ -45,7 +33,7 @@ namespace Administrateur
 
         public bool CreerChercheur(Chercheur chercheur)
         {
-            string query = $"INSERT INTO profils (`fname`, `lname`, `role_id`, `lab_id`) VALUES ('{chercheur.Prenom}','{chercheur.Nom}','{chercheur.Role}','{chercheur.Laboratoire}');";
+            string query = $"INSERT INTO profils (`fname`, `lname`, `role_id`, `lab_id`) VALUES ('{chercheur.Prenom}', '{chercheur.Nom}', '{chercheur.Role}', '{chercheur.Laboratoire}');";
             return new QueryBuilder().Create(query);
         }
 
@@ -58,14 +46,14 @@ namespace Administrateur
         public bool ModifierChercheur(Chercheur chercheur, int id)
         {
             
-            var query = $"UPDATE profils SET `fname`='{chercheur.Prenom}', `lname`='{chercheur.Nom}', `role_id`='{chercheur.Role}', `lab_id`='{chercheur.Laboratoire}' WHERE  `id`={id};";
+            var query = $"UPDATE profils SET `fname`= '{chercheur.Prenom}', `lname`= '{chercheur.Nom}', `role_id`= {chercheur.Role}, `lab_id`= {chercheur.Laboratoire} WHERE  `id`={id};";
             return new QueryBuilder().Update(query);
         }
 
         public bool ModifierEquipe(Equipe equipe, int id, int id_lab)
         {
             
-            var query = $"UPDATE teams SET `name`='{equipe.Name}', `lab_id`='{id_lab}' WHERE `id`={id};";
+            var query = $"UPDATE teams SET `name`= '{equipe.Name}', `lab_id`= {id_lab} WHERE `id`={id};";
             return new QueryBuilder().Update(query);
         }
 

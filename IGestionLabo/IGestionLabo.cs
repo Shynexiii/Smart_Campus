@@ -27,8 +27,5 @@ namespace IGestionLabo
         MySqlDataReader ConsulterRoleReader();
         MySqlDataReader ConsulterLaboratoireReader();
 
-        /**/
-        bool ChoisirChef(Chercheur chercheur, Equipe equipe);
-        bool AffecterChercheur(Chercheur chercheur, Equipe equipe);
     }
 }

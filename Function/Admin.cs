@@ -79,7 +79,7 @@ namespace Function
 
         public ArrayList login(string email, string password)
         {
-            string query = $"SELECT * FROM profils WHERE email='{email}' AND password='{password}';";
+            string query = $"SELECT * FROM profils WHERE email='{email}' AND password='{password}' AND role_id = (SELECT id FROM roles WHERE role = 'Admin');";
             var value = new QueryBuilder().AllData(query);
             ArrayList arrayList = new ArrayList();
             
