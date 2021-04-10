@@ -28,7 +28,15 @@ namespace Chercheur
             ChannelServices.RegisterChannel(new TcpChannel(), false);
             objProduction = (IGestionProd)Activator.GetObject(typeof(IGestionProd), "tcp://localhost:1236/IGestionProduction");
 
-            Application.Run(new Form1());
+
+            LoginFormChercheur loginFormChercheur = new LoginFormChercheur();
+
+            Application.Run(loginFormChercheur);
+            if (loginFormChercheur.UserSuccessfullyAuthenticated)
+            {
+                Application.Run(new Form1(loginFormChercheur.user));
+            }
+
         }
     }
 }

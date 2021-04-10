@@ -21,11 +21,12 @@ namespace IGestionLabo
         bool CreerChercheur(Chercheur chercheur);
         bool ModifierChercheur(Chercheur chercheur, int id);
         bool SupprimerChercheur(int id);
-        ArrayList ConsulterChercheur();
+        ArrayList ConsulterChercheur(int id);
 
         /**/
         MySqlDataReader ConsulterRoleReader();
         MySqlDataReader ConsulterLaboratoireReader();
+        MySqlDataReader ConsulterTeamReader();
 
     }
 }

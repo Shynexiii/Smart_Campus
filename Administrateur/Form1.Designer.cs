@@ -31,18 +31,21 @@ namespace Administrateur
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.BtnLaboratoire = new System.Windows.Forms.Button();
+            this.BtnRole = new System.Windows.Forms.Button();
             this.BtnEquipe = new System.Windows.Forms.Button();
             this.BtnChercheure = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.LabelPrenom = new System.Windows.Forms.Label();
+            this.LabelNom = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnRole = new System.Windows.Forms.Button();
-            this.BtnLaboratoire = new System.Windows.Forms.Button();
+            this.laboratoireView1 = new Administrateur.LaboratoireView();
+            this.roleView1 = new Administrateur.RoleView();
             this.chercheurView1 = new Administrateur.ChercheurView();
             this.equipeView1 = new Administrateur.EquipeView();
-            this.roleView1 = new Administrateur.RoleView();
-            this.laboratoireView1 = new Administrateur.LaboratoireView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,10 +71,30 @@ namespace Administrateur
             this.panel4.Controls.Add(this.BtnRole);
             this.panel4.Controls.Add(this.BtnEquipe);
             this.panel4.Controls.Add(this.BtnChercheure);
-            this.panel4.Location = new System.Drawing.Point(3, 157);
+            this.panel4.Location = new System.Drawing.Point(3, 178);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(164, 401);
+            this.panel4.Size = new System.Drawing.Size(164, 380);
             this.panel4.TabIndex = 2;
+            // 
+            // BtnLaboratoire
+            // 
+            this.BtnLaboratoire.Location = new System.Drawing.Point(3, 126);
+            this.BtnLaboratoire.Name = "BtnLaboratoire";
+            this.BtnLaboratoire.Size = new System.Drawing.Size(156, 35);
+            this.BtnLaboratoire.TabIndex = 4;
+            this.BtnLaboratoire.Text = "Laboratoires";
+            this.BtnLaboratoire.UseVisualStyleBackColor = true;
+            this.BtnLaboratoire.Click += new System.EventHandler(this.BtnLaboratoire_Click);
+            // 
+            // BtnRole
+            // 
+            this.BtnRole.Location = new System.Drawing.Point(3, 85);
+            this.BtnRole.Name = "BtnRole";
+            this.BtnRole.Size = new System.Drawing.Size(156, 35);
+            this.BtnRole.TabIndex = 3;
+            this.BtnRole.Text = "Roles";
+            this.BtnRole.UseVisualStyleBackColor = true;
+            this.BtnRole.Click += new System.EventHandler(this.BtnRole_Click);
             // 
             // BtnEquipe
             // 
@@ -118,42 +141,70 @@ namespace Administrateur
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.LabelPrenom);
+            this.panel3.Controls.Add(this.LabelNom);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(3, 121);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(164, 30);
+            this.panel3.Size = new System.Drawing.Size(164, 51);
             this.panel3.TabIndex = 1;
+            // 
+            // LabelPrenom
+            // 
+            this.LabelPrenom.AutoSize = true;
+            this.LabelPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.LabelPrenom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelPrenom.Location = new System.Drawing.Point(62, 28);
+            this.LabelPrenom.Name = "LabelPrenom";
+            this.LabelPrenom.Size = new System.Drawing.Size(0, 15);
+            this.LabelPrenom.TabIndex = 4;
+            // 
+            // LabelNom
+            // 
+            this.LabelNom.AutoSize = true;
+            this.LabelNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.LabelNom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelNom.Location = new System.Drawing.Point(42, 4);
+            this.LabelNom.Name = "LabelNom";
+            this.LabelNom.Size = new System.Drawing.Size(0, 15);
+            this.LabelNom.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(2, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Prénom :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(9, 2);
+            this.label1.Location = new System.Drawing.Point(2, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 24);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Administrateur";
+            this.label1.Text = "Nom : ";
             // 
-            // BtnRole
+            // laboratoireView1
             // 
-            this.BtnRole.Location = new System.Drawing.Point(3, 85);
-            this.BtnRole.Name = "BtnRole";
-            this.BtnRole.Size = new System.Drawing.Size(156, 35);
-            this.BtnRole.TabIndex = 3;
-            this.BtnRole.Text = "Roles";
-            this.BtnRole.UseVisualStyleBackColor = true;
-            this.BtnRole.Click += new System.EventHandler(this.BtnRole_Click);
+            this.laboratoireView1.Location = new System.Drawing.Point(169, 3);
+            this.laboratoireView1.Name = "laboratoireView1";
+            this.laboratoireView1.Size = new System.Drawing.Size(812, 319);
+            this.laboratoireView1.TabIndex = 7;
             // 
-            // BtnLaboratoire
+            // roleView1
             // 
-            this.BtnLaboratoire.Location = new System.Drawing.Point(3, 126);
-            this.BtnLaboratoire.Name = "BtnLaboratoire";
-            this.BtnLaboratoire.Size = new System.Drawing.Size(156, 35);
-            this.BtnLaboratoire.TabIndex = 4;
-            this.BtnLaboratoire.Text = "Laboratoires";
-            this.BtnLaboratoire.UseVisualStyleBackColor = true;
-            this.BtnLaboratoire.Click += new System.EventHandler(this.BtnLaboratoire_Click);
+            this.roleView1.Location = new System.Drawing.Point(169, 3);
+            this.roleView1.Name = "roleView1";
+            this.roleView1.Size = new System.Drawing.Size(812, 319);
+            this.roleView1.TabIndex = 6;
             // 
             // chercheurView1
             // 
@@ -168,20 +219,6 @@ namespace Administrateur
             this.equipeView1.Name = "equipeView1";
             this.equipeView1.Size = new System.Drawing.Size(812, 319);
             this.equipeView1.TabIndex = 4;
-            // 
-            // roleView1
-            // 
-            this.roleView1.Location = new System.Drawing.Point(169, 3);
-            this.roleView1.Name = "roleView1";
-            this.roleView1.Size = new System.Drawing.Size(812, 319);
-            this.roleView1.TabIndex = 6;
-            // 
-            // laboratoireView1
-            // 
-            this.laboratoireView1.Location = new System.Drawing.Point(169, 3);
-            this.laboratoireView1.Name = "laboratoireView1";
-            this.laboratoireView1.Size = new System.Drawing.Size(812, 319);
-            this.laboratoireView1.TabIndex = 7;
             // 
             // Form1
             // 
@@ -199,6 +236,8 @@ namespace Administrateur
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrateur";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Click += new System.EventHandler(this.Form1_Click);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -225,6 +264,9 @@ namespace Administrateur
         private System.Windows.Forms.Button BtnRole;
         private RoleView roleView1;
         private LaboratoireView laboratoireView1;
+        private System.Windows.Forms.Label LabelPrenom;
+        private System.Windows.Forms.Label LabelNom;
+        private System.Windows.Forms.Label label2;
     }
 }
 

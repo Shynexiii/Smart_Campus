@@ -69,5 +69,15 @@ namespace ChefEquipe.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_person_black_48dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_person_black_48dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using Function;
-using IGestionLabo;
-using MySql.Data.MySqlClient;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,23 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Administrateur
+namespace ChefEquipe
 {
-    public partial class Login : Form
+    public partial class LoginFormChef : Form
     {
-        public Chercheur user;
-        public bool UserSuccessfullyAuthenticated { get; private set; }
-        public Login()
+        public bool UserSuccessfullyAuthenticated { get; set; }
+        public static IGestionLabo.Chercheur user;
+        public LoginFormChef()
         {
             InitializeComponent();
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            //BtnLogin.Enabled = false;
             string email = TbEmail.Text;
             string password = TbPassword.Text;
-            string role = "Admin";
+            string role = "Chef d\\'équipe";
             user = new fonctions().login(email, password, role);
 
             if (user != null)
@@ -41,17 +37,6 @@ namespace Administrateur
                 BtnLogin.Enabled = true;
                 labelNotMatch.Visible = true;
             }
-
-        }
-
-        private void TbEmail_TextChanged(object sender, EventArgs e)
-        {
-            labelNotMatch.Visible = false;
-        }
-
-        private void TbPassword_TextChanged(object sender, EventArgs e)
-        {
-            labelNotMatch.Visible = false;
         }
     }
 }

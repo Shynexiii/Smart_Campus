@@ -30,5 +30,6 @@ namespace ChefEquipe
             string query = $"DELETE FROM prod_sci WHERE id = {id};";
             return new QueryBuilder().Select(query);
         }
+
     }
 }

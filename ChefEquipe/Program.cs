@@ -34,7 +34,13 @@ namespace ChefEquipe
             ChannelServices.RegisterChannel(new TcpChannel(value, null, null), false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(IGestionProdImpl), "IGestionProduction", WellKnownObjectMode.SingleCall);
 
-            Application.Run(new Form1());
+            LoginFormChef loginFormChef = new LoginFormChef();
+
+            Application.Run(loginFormChef);
+            if (loginFormChef.UserSuccessfullyAuthenticated)
+            {
+                Application.Run(new Form1(LoginFormChef.user));
+            }
         }
     }
 }

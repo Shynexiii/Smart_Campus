@@ -11,7 +11,7 @@ namespace Function
     public class QueryBuilder
     {
         public MySqlConnection connection;
-        public string con = "server=localhost; userid=root; password=; database=uc2_smart_campus";
+        public string con = "server=localhost; userid=root; password=root; database=uc2_smart_campus";
         public QueryBuilder()
         {
             this.connection = new MySqlConnection(con);

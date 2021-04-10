@@ -29,19 +29,19 @@ namespace ChefEquipe
         /// </summary>
         private void InitializeComponent()
         {
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelChercheure = new System.Windows.Forms.Label();
             this.BtnRetirerChercheure = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.lastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.role = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.laboratoire = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.team = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // id
-            // 
-            this.id.Text = "#Id";
             // 
             // labelChercheure
             // 
@@ -63,33 +63,6 @@ namespace ChefEquipe
             this.BtnRetirerChercheure.UseVisualStyleBackColor = true;
             this.BtnRetirerChercheure.Click += new System.EventHandler(this.BtnRetirerChercheure_Click);
             // 
-            // listView1
-            // 
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.id,
-            this.firstname,
-            this.lastname});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(120, 56);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(688, 216);
-            this.listView1.TabIndex = 32;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // lastname
-            // 
-            this.lastname.Text = "Nom";
-            this.lastname.Width = 100;
-            // 
-            // firstname
-            // 
-            this.firstname.Text = "Prénom";
-            this.firstname.Width = 100;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -99,12 +72,68 @@ namespace ChefEquipe
             this.panel1.Size = new System.Drawing.Size(805, 50);
             this.panel1.TabIndex = 31;
             // 
+            // listView1
+            // 
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.role,
+            this.laboratoire,
+            this.team,
+            this.email});
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(120, 56);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(688, 216);
+            this.listView1.TabIndex = 37;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "#Id";
+            this.columnHeader1.Width = 40;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Prénom";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Nom";
+            this.columnHeader3.Width = 100;
+            // 
+            // role
+            // 
+            this.role.Text = "Role";
+            this.role.Width = 100;
+            // 
+            // laboratoire
+            // 
+            this.laboratoire.Text = "Laboratoire";
+            this.laboratoire.Width = 100;
+            // 
+            // team
+            // 
+            this.team.Text = "Equipe";
+            this.team.Width = 92;
+            // 
+            // email
+            // 
+            this.email.Text = "Email";
+            this.email.Width = 150;
+            // 
             // EquipeChercheur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BtnRetirerChercheure);
             this.Controls.Add(this.listView1);
+            this.Controls.Add(this.BtnRetirerChercheure);
             this.Controls.Add(this.panel1);
             this.Name = "EquipeChercheur";
             this.Size = new System.Drawing.Size(812, 319);
@@ -115,12 +144,16 @@ namespace ChefEquipe
         }
 
         #endregion
-        private System.Windows.Forms.ColumnHeader id;
         private System.Windows.Forms.Label labelChercheure;
         private System.Windows.Forms.Button BtnRetirerChercheure;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader firstname;
-        private System.Windows.Forms.ColumnHeader lastname;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader email;
+        private System.Windows.Forms.ColumnHeader role;
+        private System.Windows.Forms.ColumnHeader laboratoire;
+        private System.Windows.Forms.ColumnHeader team;
     }
 }

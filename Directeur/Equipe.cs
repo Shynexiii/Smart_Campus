@@ -33,7 +33,7 @@ namespace Directeur
             CbTeamLaboratoire.Items.Clear();
             listView1.Items.Clear();
 
-            MySqlDataReader labo = new Admin().ConsulterLaboratoireReader();
+            MySqlDataReader labo = new Admin().ConsulterTableReader("labs");
 
             string name;
             while (labo.Read())
@@ -52,7 +52,6 @@ namespace Directeur
                 {
                     values[columnIndex++] = Convert.ToString(column);
                 }
-
                 ListViewItem newItem = new ListViewItem(values);
                 listView1.Items.Add(newItem);
             }

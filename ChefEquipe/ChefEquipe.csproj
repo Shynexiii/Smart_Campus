@@ -60,6 +60,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="IGestionProdImpl.cs" />
+    <Compile Include="LoginFormChef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFormChef.Designer.cs">
+      <DependentUpon>LoginFormChef.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EquipeChercheur.resx">
@@ -67,6 +73,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFormChef.resx">
+      <DependentUpon>LoginFormChef.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,10 +112,17 @@
       <Project>{412961e2-c5ac-4061-854a-e64f1a08ffa3}</Project>
       <Name>IGestionEquipe</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IGestionLabo\IGestionLabo.csproj">
+      <Project>{5F122CD7-FB7B-40BA-8D30-8F231980988E}</Project>
+      <Name>IGestionLabo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IGestionProduction\IGestionProduction.csproj">
       <Project>{b59054af-a46c-4912-8e23-5873754bc038}</Project>
       <Name>IGestionProduction</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_person_black_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

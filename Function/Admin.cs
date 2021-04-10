@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using IGestionLabo;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,17 +10,24 @@ using System.Threading.Tasks;
 namespace Function
 {
     public class Admin 
-    { 
+    {
+        public Chercheur chercheur;
+        public String[] CurrentUser;
         public ArrayList ConsulterRole()
         {
             var query = $"SELECT * FROM roles";
             return new QueryBuilder().All(query);
         }
-
-        public MySqlDataReader ConsulterRoleReader()
+        public ArrayList ConsulterChercheur()
         {
-            var query = $"SELECT * FROM roles";
-            return new QueryBuilder().AllData(query);
+            var query = $"SELECT p.id, p.fname, p.lname, r.role, l.code, t.name, p.email, p.password " +
+                $"FROM profils p " +
+                $"JOIN roles r ON p.role_id = r.id " +
+                $"JOIN labs l ON p.lab_id = l.id " +
+                $"JOIN teams t ON p.team_id = t.id " +
+                $"ORDER BY p.id ASC";
+
+            return new QueryBuilder().All(query);
         }
 
         public MySqlDataReader GetRoleChef()
@@ -52,12 +60,6 @@ namespace Function
             return new QueryBuilder().All(query);
         }
 
-        public MySqlDataReader ConsulterLaboratoireReader()
-        {
-            var query = $"SELECT * FROM labs";
-            return new QueryBuilder().AllData(query);
-        }
-
         public bool CreerLaboratoire(Laboratoire laboratoire)
         {
             string query = $"INSERT INTO labs (`code`) VALUES ('{laboratoire.Name}');";
@@ -77,19 +79,29 @@ namespace Function
             return new QueryBuilder().Delete(query);
         }
 
-        public ArrayList login(string email, string password)
+        public MySqlDataReader ConsulterTableReader(string table)
         {
-            string query = $"SELECT * FROM profils WHERE email='{email}' AND password='{password}' AND role_id = (SELECT id FROM roles WHERE role = 'Admin');";
+            var query = $"SELECT * FROM {table}";
+            return new QueryBuilder().AllData(query);
+        }
+
+        public Chercheur login(string email, string password, string role)
+        {
+            string query = $"SELECT * FROM profils WHERE email ='{email}' AND password ='{password}' AND role_id = '{role}';";
             var value = new QueryBuilder().AllData(query);
-            ArrayList arrayList = new ArrayList();
             
             while (value.Read())
             {
-                object[] data = new object[value.FieldCount];
-                value.GetValues(data);
-                arrayList.Add(data);
+                if (value.FieldCount == 0)
+                {
+                    chercheur = null;
+                }
+                else
+                {
+                    chercheur = new Chercheur(value.GetString(2), value.GetString(1), value.GetInt32(3), value.GetInt32(4), value.GetInt32(5), value.GetString(6), value.GetString(7));
+                }
             }
-            return arrayList;
+            return chercheur;
         }
 
         public ArrayList Consulter(string name)
@@ -105,6 +117,32 @@ namespace Function
                 arrayList.Add(data);
             }
             return arrayList;
+        }
+
+        public String[] GetCurrentUser(string email, string password)
+        {
+            string query = $"SELECT * FROM profils WHERE email = '{email}' AND password = '{password}';";
+            var value = new QueryBuilder().AllData(query);
+            CurrentUser = new string[8];
+            while (value.Read())
+            {
+                if (value.FieldCount == 0)
+                {
+                    CurrentUser = null;
+                }
+                else
+                {
+                    CurrentUser[0] = value.GetString(0);
+                    CurrentUser[1] = value.GetString(1);
+                    CurrentUser[2] = value.GetString(2);
+                    CurrentUser[3] = value.GetString(3);
+                    CurrentUser[4] = value.GetString(4);
+                    CurrentUser[5] = value.GetString(5);
+                    CurrentUser[6] = value.GetString(6);
+                    CurrentUser[7] = value.GetString(7);
+                }
+            }
+            return CurrentUser;
         }
     }
 }

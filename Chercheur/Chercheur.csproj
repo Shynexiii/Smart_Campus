@@ -53,6 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginFormChercheur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFormChercheur.Designer.cs">
+      <DependentUpon>LoginFormChercheur.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductionScientifique.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFormChercheur.resx">
+      <DependentUpon>LoginFormChercheur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionScientifique.resx">
       <DependentUpon>ProductionScientifique.cs</DependentUpon>
@@ -94,10 +103,21 @@
     <None Include="Resources\baseline_account_circle_black_48dp.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Function\Function.csproj">
+      <Project>{B2769A4E-349B-41EE-9A95-504FF88A72FD}</Project>
+      <Name>Function</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IGestionLabo\IGestionLabo.csproj">
+      <Project>{5F122CD7-FB7B-40BA-8D30-8F231980988E}</Project>
+      <Name>IGestionLabo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IGestionProduction\IGestionProduction.csproj">
       <Project>{b59054af-a46c-4912-8e23-5873754bc038}</Project>
       <Name>IGestionProduction</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_person_black_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

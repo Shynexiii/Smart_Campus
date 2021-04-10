@@ -32,9 +32,15 @@ namespace Directeur
             value["name"] = "GestionEquipe";
             ChannelServices.RegisterChannel(new TcpChannel(value,null,null), false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(IGestionEquipeImpl), "IGestionEquipe", WellKnownObjectMode.SingleCall);
-            
-            Application.Run(new Form1());
-            
+
+            LoginFormDir loginFormDir = new LoginFormDir();
+
+            Application.Run(loginFormDir);
+            if (loginFormDir.UserSuccessfullyAuthenticated)
+            {
+                Application.Run(new Form1(loginFormDir.user));
+            }
+
         }
     }
 }

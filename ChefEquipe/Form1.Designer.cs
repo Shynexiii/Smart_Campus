@@ -30,31 +30,88 @@ namespace ChefEquipe
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.LabelPrenom = new System.Windows.Forms.Label();
+            this.LabelNom = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.equipeChercheur1 = new ChefEquipe.EquipeChercheur();
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnChercheure = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.equipeChercheur1);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 561);
             this.panel1.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.LabelPrenom);
+            this.panel3.Controls.Add(this.LabelNom);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(3, 121);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(164, 51);
+            this.panel3.TabIndex = 4;
+            // 
+            // LabelPrenom
+            // 
+            this.LabelPrenom.AutoSize = true;
+            this.LabelPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.LabelPrenom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelPrenom.Location = new System.Drawing.Point(62, 28);
+            this.LabelPrenom.Name = "LabelPrenom";
+            this.LabelPrenom.Size = new System.Drawing.Size(0, 15);
+            this.LabelPrenom.TabIndex = 4;
+            // 
+            // LabelNom
+            // 
+            this.LabelNom.AutoSize = true;
+            this.LabelNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.LabelNom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelNom.Location = new System.Drawing.Point(42, 4);
+            this.LabelNom.Name = "LabelNom";
+            this.LabelNom.Size = new System.Drawing.Size(0, 15);
+            this.LabelNom.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(2, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Prénom :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(2, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom : ";
             // 
             // equipeChercheur1
             // 
@@ -67,9 +124,9 @@ namespace ChefEquipe
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.BtnChercheure);
-            this.panel4.Location = new System.Drawing.Point(3, 157);
+            this.panel4.Location = new System.Drawing.Point(3, 178);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(164, 401);
+            this.panel4.Size = new System.Drawing.Size(164, 380);
             this.panel4.TabIndex = 2;
             // 
             // BtnChercheure
@@ -103,26 +160,6 @@ namespace ChefEquipe
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(3, 121);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(164, 30);
-            this.panel3.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(10, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chef D\'équipe";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,11 +173,11 @@ namespace ChefEquipe
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chef d\'équipe";
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -152,9 +189,12 @@ namespace ChefEquipe
         private System.Windows.Forms.Button BtnChercheure;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
         private EquipeChercheur equipeChercheur1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label LabelPrenom;
+        private System.Windows.Forms.Label LabelNom;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

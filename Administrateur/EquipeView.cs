@@ -91,7 +91,7 @@ namespace Administrateur
                 CbLaboratoire.Text = "";
                 CbLaboratoire.Items.Clear();
                 ArrayList rowList = new IGestionLaboImpl().ConsulterEquipe();
-                MySqlDataReader labo = new Admin().ConsulterLaboratoireReader();
+                MySqlDataReader labo = new Admin().ConsulterTableReader("labs");
                 
                 string name;
                 while (labo.Read())

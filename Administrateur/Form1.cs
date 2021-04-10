@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IGestionLabo;
+using System;
 using System.Collections;
 using System.Windows.Forms;
 
@@ -6,7 +7,7 @@ namespace Administrateur
 {
     public partial class Form1 : Form
     {
-        public Form1(ArrayList user)
+        public Form1(Chercheur user)
         {
             InitializeComponent();
             chercheurView1.Show();
@@ -14,7 +15,8 @@ namespace Administrateur
             roleView1.Hide();
             laboratoireView1.Hide();
             chercheurView1.AfficherChercheur();
-            
+            LabelNom.Text = user.Nom;
+            LabelPrenom.Text = user.Prenom;
         }
 
 
@@ -52,6 +54,16 @@ namespace Administrateur
             roleView1.Hide();
             laboratoireView1.Show();
             laboratoireView1.AfficherLaboratoire();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

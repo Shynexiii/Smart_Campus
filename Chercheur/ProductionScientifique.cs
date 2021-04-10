@@ -7,6 +7,7 @@ namespace Chercheur
 {
     public partial class ProductionScientifique : UserControl
     {
+        public String[] chercheur = new string[8];
         public ProductionScientifique()
         {
             InitializeComponent();
@@ -14,26 +15,24 @@ namespace Chercheur
 
         private void BtnAddProduction_Click(object sender, EventArgs e)
         {
-            int created_by = 1;
             string title = TbTitle.Text;
             string description = TbDescription.Text;
             string reference = TbReference.Text;
             string type = TbType.Text;
             Production production = new Production(title, description, reference, type);
-            Program.objProduction.PublierProduction(production, created_by);
+            Program.objProduction.PublierProduction(production, Int32.Parse(chercheur[0]));
             AfficherProduction();
         }
 
         private void BtnEditProduction_Click(object sender, EventArgs e)
         {
-            int created_by = 1;
             int id = Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             string title = TbTitle.Text;
             string description = TbDescription.Text;
             string reference = TbReference.Text;
             string type = TbType.Text;
             Production production = new Production(title, description, reference, type);
-            Program.objProduction.ModifierProduction(production, id, created_by);
+            Program.objProduction.ModifierProduction(production, id, Int32.Parse(chercheur[0]));
             AfficherProduction();
         }
 
@@ -61,8 +60,9 @@ namespace Chercheur
                 TbReference.Text = "";
                 TbType.Text = "";
                 listView1.Items.Clear();
-                int id = 1;
-                ArrayList rowList = Program.objProduction.ConsulerProductions(id);
+                
+                chercheur = new Function.Admin().GetCurrentUser(Form1.Chercheur.Email, Form1.Chercheur.Password);
+                ArrayList rowList = Program.objProduction.ConsulerProductions(Int32.Parse(chercheur[0]));
 
                 foreach (object[] row in rowList)
                 {

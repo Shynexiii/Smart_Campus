@@ -101,5 +101,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IGestionLabo\IGestionLabo.csproj">
+      <Project>{5F122CD7-FB7B-40BA-8D30-8F231980988E}</Project>
+      <Name>IGestionLabo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

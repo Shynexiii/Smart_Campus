@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChefEquipe
@@ -33,9 +26,7 @@ namespace ChefEquipe
             try
             {
                 listView1.Items.Clear();
-                int ChefEquipe_teamId = 1;
-                int ChefEquipe_labId = 1;
-                ArrayList rowList = Program.objEquipe.ConsulterChercheur(ChefEquipe_teamId, ChefEquipe_labId);
+                ArrayList rowList = Program.objEquipe.ConsulterChercheur(LoginFormChef.user.Laboratoire,LoginFormChef.user.Team);
 
                 foreach (object[] row in rowList)
                 {
