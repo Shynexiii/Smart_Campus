@@ -66,6 +66,12 @@
     <Compile Include="LoginFormChef.Designer.cs">
       <DependentUpon>LoginFormChef.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prod_sci_chef.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Prod_sci_chef.Designer.cs">
+      <DependentUpon>Prod_sci_chef.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EquipeChercheur.resx">
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginFormChef.resx">
       <DependentUpon>LoginFormChef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prod_sci_chef.resx">
+      <DependentUpon>Prod_sci_chef.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

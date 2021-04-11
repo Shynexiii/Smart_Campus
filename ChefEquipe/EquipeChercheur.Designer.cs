@@ -49,9 +49,9 @@ namespace ChefEquipe
             this.labelChercheure.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChercheure.Location = new System.Drawing.Point(1, 9);
             this.labelChercheure.Name = "labelChercheure";
-            this.labelChercheure.Size = new System.Drawing.Size(149, 29);
+            this.labelChercheure.Size = new System.Drawing.Size(162, 29);
             this.labelChercheure.TabIndex = 2;
-            this.labelChercheure.Text = "Chercheure";
+            this.labelChercheure.Text = "Chercheures";
             // 
             // BtnRetirerChercheure
             // 

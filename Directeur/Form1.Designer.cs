@@ -40,8 +40,10 @@ namespace Directeur
             this.BtnEquipe = new System.Windows.Forms.Button();
             this.BtnChercheure = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.prod_Sci_Dir1 = new Directeur.Prod_Sci_Dir();
             this.equipe1 = new Directeur.Equipe();
             this.chercheur1 = new Directeur.Chercheur();
+            this.BtnProdSci = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -128,6 +130,7 @@ namespace Directeur
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.BtnProdSci);
             this.panel4.Controls.Add(this.BtnEquipe);
             this.panel4.Controls.Add(this.BtnChercheure);
             this.panel4.Location = new System.Drawing.Point(3, 178);
@@ -166,6 +169,13 @@ namespace Directeur
             this.panel2.Size = new System.Drawing.Size(164, 112);
             this.panel2.TabIndex = 1;
             // 
+            // prod_Sci_Dir1
+            // 
+            this.prod_Sci_Dir1.Location = new System.Drawing.Point(169, 3);
+            this.prod_Sci_Dir1.Name = "prod_Sci_Dir1";
+            this.prod_Sci_Dir1.Size = new System.Drawing.Size(812, 319);
+            this.prod_Sci_Dir1.TabIndex = 5;
+            // 
             // equipe1
             // 
             this.equipe1.Location = new System.Drawing.Point(169, 3);
@@ -180,11 +190,23 @@ namespace Directeur
             this.chercheur1.Size = new System.Drawing.Size(812, 319);
             this.chercheur1.TabIndex = 3;
             // 
+            // BtnProdSci
+            // 
+            this.BtnProdSci.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BtnProdSci.Location = new System.Drawing.Point(3, 85);
+            this.BtnProdSci.Name = "BtnProdSci";
+            this.BtnProdSci.Size = new System.Drawing.Size(156, 35);
+            this.BtnProdSci.TabIndex = 3;
+            this.BtnProdSci.Text = "Production scientifique";
+            this.BtnProdSci.UseVisualStyleBackColor = true;
+            this.BtnProdSci.Click += new System.EventHandler(this.BtnProdSci_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.prod_Sci_Dir1);
             this.Controls.Add(this.equipe1);
             this.Controls.Add(this.chercheur1);
             this.Controls.Add(this.panel1);
@@ -216,6 +238,8 @@ namespace Directeur
         private System.Windows.Forms.Label LabelNom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private Prod_Sci_Dir prod_Sci_Dir1;
+        private System.Windows.Forms.Button BtnProdSci;
     }
 }
 

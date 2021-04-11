@@ -30,6 +30,7 @@ namespace ChefEquipe
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.prod_sci_chef1 = new ChefEquipe.Prod_sci_chef();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LabelPrenom = new System.Windows.Forms.Label();
             this.LabelNom = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@ namespace ChefEquipe
             this.label1 = new System.Windows.Forms.Label();
             this.equipeChercheur1 = new ChefEquipe.EquipeChercheur();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.BtnChercheure = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,6 +51,7 @@ namespace ChefEquipe
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.prod_sci_chef1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.equipeChercheur1);
             this.panel1.Controls.Add(this.panel4);
@@ -58,6 +61,13 @@ namespace ChefEquipe
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 561);
             this.panel1.TabIndex = 4;
+            // 
+            // prod_sci_chef1
+            // 
+            this.prod_sci_chef1.Location = new System.Drawing.Point(169, 3);
+            this.prod_sci_chef1.Name = "prod_sci_chef1";
+            this.prod_sci_chef1.Size = new System.Drawing.Size(812, 319);
+            this.prod_sci_chef1.TabIndex = 5;
             // 
             // panel3
             // 
@@ -123,11 +133,23 @@ namespace ChefEquipe
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.BtnChercheure);
             this.panel4.Location = new System.Drawing.Point(3, 178);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 380);
             this.panel4.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(3, 44);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 35);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Productions scientifiques";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BtnChercheure
             // 
@@ -195,6 +217,8 @@ namespace ChefEquipe
         private System.Windows.Forms.Label LabelNom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private Prod_sci_chef prod_sci_chef1;
     }
 }
 

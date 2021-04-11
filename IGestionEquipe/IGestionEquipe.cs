@@ -12,5 +12,6 @@ namespace IGestionEquipe
         bool RetirerChercheur(int id);
         ArrayList ConsulterChercheur(int lab_id, int team_id);
         void ModifierCompte(Chercheur chercheur, int id);
+        ArrayList ConsulterProdctionScientifique(int lab_id, int team_id);
     }
 }

@@ -27,6 +27,21 @@ namespace Administrateur
             var query = $"SELECT teams.id, teams.name, labs.code FROM teams JOIN labs ON labs.id = lab_id ORDER	BY teams.id";
             return new QueryBuilder().All(query);
         }
+
+        public ArrayList ConsulterProdctionScientifique(int lab_id)
+        {
+            var query = $"SELECT prod_sci.id, prod_sci.title, prod_sci.description, prod_sci.reference, prod_sci.type, profils.fname," +
+                $" profils.lname, labs.code, teams.name, prod_sci.created_at " +
+                $"FROM prod_sci " +
+                $"JOIN profils ON profils.id = prod_sci.created_by " +
+                $"JOIN labs ON labs.id = profils.lab_id " +
+                $"JOIN teams ON teams.id = profils.team_id " +
+                $"WHERE profils.lab_id = {lab_id} " +
+                $"ORDER BY prod_sci.id ASC";
+
+            return new QueryBuilder().All(query);
+        }
+
         public MySqlDataReader ConsulterRoleReader()
         {
             var query = $"SELECT * FROM roles";

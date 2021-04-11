@@ -24,6 +24,7 @@ namespace IGestionLabo
         ArrayList ConsulterChercheur(int id);
 
         /**/
+        ArrayList ConsulterProdctionScientifique(int lab_id);
         MySqlDataReader ConsulterRoleReader();
         MySqlDataReader ConsulterLaboratoireReader();
         MySqlDataReader ConsulterTeamReader();

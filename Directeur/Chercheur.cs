@@ -37,7 +37,7 @@ namespace Directeur
                 CbLaboratoire.Items.Clear();
                 CbTeam.Text = "";
                 CbTeam.Items.Clear();
-                ArrayList rowList = Program.obj.ConsulterChercheur(Form1.User);
+                ArrayList rowList = Program.obj.ConsulterChercheur(Form1.Laboratoire_id);
 
                 MySqlDataReader role = Program.obj.ConsulterRoleReader();
                 MySqlDataReader labo = Program.obj.ConsulterLaboratoireReader();
