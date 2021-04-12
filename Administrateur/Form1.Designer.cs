@@ -42,10 +42,10 @@ namespace Administrateur
             this.LabelNom = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.laboratoireView1 = new Administrateur.LaboratoireView();
             this.roleView1 = new Administrateur.RoleView();
-            this.chercheurView1 = new Administrateur.ChercheurView();
+            this.laboratoireView1 = new Administrateur.LaboratoireView();
             this.equipeView1 = new Administrateur.EquipeView();
+            this.chercheurView1 = new Administrateur.ChercheurView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -192,43 +192,43 @@ namespace Administrateur
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom : ";
             // 
-            // laboratoireView1
-            // 
-            this.laboratoireView1.Location = new System.Drawing.Point(169, 3);
-            this.laboratoireView1.Name = "laboratoireView1";
-            this.laboratoireView1.Size = new System.Drawing.Size(812, 319);
-            this.laboratoireView1.TabIndex = 7;
-            // 
             // roleView1
             // 
             this.roleView1.Location = new System.Drawing.Point(169, 3);
             this.roleView1.Name = "roleView1";
-            this.roleView1.Size = new System.Drawing.Size(812, 319);
-            this.roleView1.TabIndex = 6;
+            this.roleView1.Size = new System.Drawing.Size(812, 337);
+            this.roleView1.TabIndex = 3;
             // 
-            // chercheurView1
+            // laboratoireView1
             // 
-            this.chercheurView1.Location = new System.Drawing.Point(169, 3);
-            this.chercheurView1.Name = "chercheurView1";
-            this.chercheurView1.Size = new System.Drawing.Size(812, 319);
-            this.chercheurView1.TabIndex = 5;
+            this.laboratoireView1.Location = new System.Drawing.Point(169, 3);
+            this.laboratoireView1.Name = "laboratoireView1";
+            this.laboratoireView1.Size = new System.Drawing.Size(812, 337);
+            this.laboratoireView1.TabIndex = 4;
             // 
             // equipeView1
             // 
             this.equipeView1.Location = new System.Drawing.Point(169, 3);
             this.equipeView1.Name = "equipeView1";
-            this.equipeView1.Size = new System.Drawing.Size(812, 319);
-            this.equipeView1.TabIndex = 4;
+            this.equipeView1.Size = new System.Drawing.Size(812, 350);
+            this.equipeView1.TabIndex = 5;
+            // 
+            // chercheurView1
+            // 
+            this.chercheurView1.Location = new System.Drawing.Point(169, 3);
+            this.chercheurView1.Name = "chercheurView1";
+            this.chercheurView1.Size = new System.Drawing.Size(812, 350);
+            this.chercheurView1.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.laboratoireView1);
             this.Controls.Add(this.roleView1);
-            this.Controls.Add(this.chercheurView1);
+            this.Controls.Add(this.laboratoireView1);
             this.Controls.Add(this.equipeView1);
+            this.Controls.Add(this.chercheurView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -258,15 +258,15 @@ namespace Administrateur
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private EquipeView equipeView1;
-        private ChercheurView chercheurView1;
         private System.Windows.Forms.Button BtnLaboratoire;
         private System.Windows.Forms.Button BtnRole;
-        private RoleView roleView1;
-        private LaboratoireView laboratoireView1;
         private System.Windows.Forms.Label LabelPrenom;
         private System.Windows.Forms.Label LabelNom;
         private System.Windows.Forms.Label label2;
+        private RoleView roleView1;
+        private LaboratoireView laboratoireView1;
+        private EquipeView equipeView1;
+        private ChercheurView chercheurView1;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Function;
 using MySql.Data.MySqlClient;
@@ -55,8 +56,10 @@ namespace Administrateur
                     CbTeam.Items.Add(teamName);
                 }
 
+
                 foreach (object[] row in rowList)
                 {
+                    
                     string[] values = new string[row.Length];
                     int columnIndex = 0;
 
@@ -163,6 +166,13 @@ namespace Administrateur
         private void listView1_Leave(object sender, EventArgs e)
         {
             BtnAddChercheure.Enabled = true;
+        }
+
+        private void BtnView_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(listView1.SelectedItems[0].SubItems[0].Text);
+            string url = $"http://localhost:54267/Profile/Index/{id}";
+            Process.Start(url);
         }
     }
 }

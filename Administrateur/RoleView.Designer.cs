@@ -40,7 +40,6 @@ namespace Administrateur
             this.BtnDeleteRole = new System.Windows.Forms.Button();
             this.BtnEditRole = new System.Windows.Forms.Button();
             this.BtnAddRole = new System.Windows.Forms.Button();
-            this.BtnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +47,6 @@ namespace Administrateur
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.BtnRefresh);
             this.panel1.Controls.Add(this.labelRole);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
@@ -150,16 +148,6 @@ namespace Administrateur
             this.BtnAddRole.UseVisualStyleBackColor = true;
             this.BtnAddRole.Click += new System.EventHandler(this.BtnAddRole_Click);
             // 
-            // BtnRefresh
-            // 
-            this.BtnRefresh.Location = new System.Drawing.Point(725, 15);
-            this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.BtnRefresh.TabIndex = 41;
-            this.BtnRefresh.Text = "Rafraîchir";
-            this.BtnRefresh.UseVisualStyleBackColor = true;
-            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
-            // 
             // RoleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +181,5 @@ namespace Administrateur
         private System.Windows.Forms.Button BtnDeleteRole;
         private System.Windows.Forms.Button BtnEditRole;
         private System.Windows.Forms.Button BtnAddRole;
-        private System.Windows.Forms.Button BtnRefresh;
     }
 }

@@ -37,13 +37,13 @@ namespace Directeur
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.BtnProdSci = new System.Windows.Forms.Button();
             this.BtnEquipe = new System.Windows.Forms.Button();
             this.BtnChercheure = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.prod_Sci_Dir1 = new Directeur.Prod_Sci_Dir();
             this.equipe1 = new Directeur.Equipe();
             this.chercheur1 = new Directeur.Chercheur();
-            this.BtnProdSci = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -138,6 +138,17 @@ namespace Directeur
             this.panel4.Size = new System.Drawing.Size(164, 380);
             this.panel4.TabIndex = 2;
             // 
+            // BtnProdSci
+            // 
+            this.BtnProdSci.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BtnProdSci.Location = new System.Drawing.Point(3, 85);
+            this.BtnProdSci.Name = "BtnProdSci";
+            this.BtnProdSci.Size = new System.Drawing.Size(156, 35);
+            this.BtnProdSci.TabIndex = 3;
+            this.BtnProdSci.Text = "Production scientifique";
+            this.BtnProdSci.UseVisualStyleBackColor = true;
+            this.BtnProdSci.Click += new System.EventHandler(this.BtnProdSci_Click);
+            // 
             // BtnEquipe
             // 
             this.BtnEquipe.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -173,33 +184,22 @@ namespace Directeur
             // 
             this.prod_Sci_Dir1.Location = new System.Drawing.Point(169, 3);
             this.prod_Sci_Dir1.Name = "prod_Sci_Dir1";
-            this.prod_Sci_Dir1.Size = new System.Drawing.Size(812, 319);
+            this.prod_Sci_Dir1.Size = new System.Drawing.Size(812, 350);
             this.prod_Sci_Dir1.TabIndex = 5;
             // 
             // equipe1
             // 
             this.equipe1.Location = new System.Drawing.Point(169, 3);
             this.equipe1.Name = "equipe1";
-            this.equipe1.Size = new System.Drawing.Size(812, 319);
+            this.equipe1.Size = new System.Drawing.Size(812, 350);
             this.equipe1.TabIndex = 4;
             // 
             // chercheur1
             // 
             this.chercheur1.Location = new System.Drawing.Point(169, 3);
             this.chercheur1.Name = "chercheur1";
-            this.chercheur1.Size = new System.Drawing.Size(812, 319);
+            this.chercheur1.Size = new System.Drawing.Size(812, 350);
             this.chercheur1.TabIndex = 3;
-            // 
-            // BtnProdSci
-            // 
-            this.BtnProdSci.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnProdSci.Location = new System.Drawing.Point(3, 85);
-            this.BtnProdSci.Name = "BtnProdSci";
-            this.BtnProdSci.Size = new System.Drawing.Size(156, 35);
-            this.BtnProdSci.TabIndex = 3;
-            this.BtnProdSci.Text = "Production scientifique";
-            this.BtnProdSci.UseVisualStyleBackColor = true;
-            this.BtnProdSci.Click += new System.EventHandler(this.BtnProdSci_Click);
             // 
             // Form1
             // 

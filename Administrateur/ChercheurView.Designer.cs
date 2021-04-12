@@ -58,13 +58,15 @@ namespace Administrateur
             this.label5 = new System.Windows.Forms.Label();
             this.CbLaboratoire = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.profile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BtnView = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnAddChercheure
             // 
-            this.BtnAddChercheure.Location = new System.Drawing.Point(3, 285);
+            this.BtnAddChercheure.Location = new System.Drawing.Point(110, 285);
             this.BtnAddChercheure.Name = "BtnAddChercheure";
             this.BtnAddChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnAddChercheure.TabIndex = 28;
@@ -89,7 +91,7 @@ namespace Administrateur
             // 
             // BtnDeleteChercheure
             // 
-            this.BtnDeleteChercheure.Location = new System.Drawing.Point(219, 285);
+            this.BtnDeleteChercheure.Location = new System.Drawing.Point(219, 324);
             this.BtnDeleteChercheure.Name = "BtnDeleteChercheure";
             this.BtnDeleteChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnDeleteChercheure.TabIndex = 30;
@@ -99,7 +101,7 @@ namespace Administrateur
             // 
             // BtnEditChercheure
             // 
-            this.BtnEditChercheure.Location = new System.Drawing.Point(111, 285);
+            this.BtnEditChercheure.Location = new System.Drawing.Point(219, 285);
             this.BtnEditChercheure.Name = "BtnEditChercheure";
             this.BtnEditChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnEditChercheure.TabIndex = 29;
@@ -118,13 +120,14 @@ namespace Administrateur
             this.laboratoire,
             this.team,
             this.email,
-            this.password});
+            this.password,
+            this.profile});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(300, 62);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(508, 246);
+            this.listView1.Size = new System.Drawing.Size(508, 285);
             this.listView1.TabIndex = 26;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -323,10 +326,26 @@ namespace Administrateur
             this.label4.TabIndex = 13;
             this.label4.Text = "Laboratoire";
             // 
+            // profile
+            // 
+            this.profile.Text = "Profile";
+            this.profile.Width = 100;
+            // 
+            // BtnView
+            // 
+            this.BtnView.Location = new System.Drawing.Point(110, 324);
+            this.BtnView.Name = "BtnView";
+            this.BtnView.Size = new System.Drawing.Size(75, 23);
+            this.BtnView.TabIndex = 31;
+            this.BtnView.Text = "Consulter";
+            this.BtnView.UseVisualStyleBackColor = true;
+            this.BtnView.Click += new System.EventHandler(this.BtnView_Click);
+            // 
             // ChercheurView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnView);
             this.Controls.Add(this.BtnAddChercheure);
             this.Controls.Add(this.BtnDeleteChercheure);
             this.Controls.Add(this.BtnEditChercheure);
@@ -334,7 +353,7 @@ namespace Administrateur
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ChercheurView";
-            this.Size = new System.Drawing.Size(812, 319);
+            this.Size = new System.Drawing.Size(812, 350);
             this.Load += new System.EventHandler(this.ChercheurView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -375,5 +394,7 @@ namespace Administrateur
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TbEmail;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ColumnHeader profile;
+        private System.Windows.Forms.Button BtnView;
     }
 }

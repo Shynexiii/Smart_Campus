@@ -30,7 +30,6 @@ namespace Administrateur
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnRefresh = new System.Windows.Forms.Button();
             this.labelLaboratoire = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,22 +50,11 @@ namespace Administrateur
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.BtnRefresh);
             this.panel1.Controls.Add(this.labelLaboratoire);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(805, 50);
             this.panel1.TabIndex = 30;
-            // 
-            // BtnRefresh
-            // 
-            this.BtnRefresh.Location = new System.Drawing.Point(725, 15);
-            this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.BtnRefresh.TabIndex = 35;
-            this.BtnRefresh.Text = "Rafraîchir";
-            this.BtnRefresh.UseVisualStyleBackColor = true;
-            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // labelLaboratoire
             // 
@@ -225,6 +213,5 @@ namespace Administrateur
         private System.Windows.Forms.Button BtnDeleteTeam;
         private System.Windows.Forms.Button BtnEditTeam;
         private System.Windows.Forms.Button BtnAddTeam;
-        private System.Windows.Forms.Button BtnRefresh;
     }
 }

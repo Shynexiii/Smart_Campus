@@ -66,7 +66,7 @@ namespace ChefEquipe
             // 
             this.prod_sci_chef1.Location = new System.Drawing.Point(169, 3);
             this.prod_sci_chef1.Name = "prod_sci_chef1";
-            this.prod_sci_chef1.Size = new System.Drawing.Size(812, 319);
+            this.prod_sci_chef1.Size = new System.Drawing.Size(812, 350);
             this.prod_sci_chef1.TabIndex = 5;
             // 
             // panel3
@@ -127,7 +127,7 @@ namespace ChefEquipe
             // 
             this.equipeChercheur1.Location = new System.Drawing.Point(169, 3);
             this.equipeChercheur1.Name = "equipeChercheur1";
-            this.equipeChercheur1.Size = new System.Drawing.Size(812, 319);
+            this.equipeChercheur1.Size = new System.Drawing.Size(812, 350);
             this.equipeChercheur1.TabIndex = 3;
             // 
             // panel4

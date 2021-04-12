@@ -58,6 +58,7 @@ namespace Directeur
             this.team = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BtnView = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +75,7 @@ namespace Directeur
             // 
             // BtnDeleteChercheure
             // 
-            this.BtnDeleteChercheure.Location = new System.Drawing.Point(219, 285);
+            this.BtnDeleteChercheure.Location = new System.Drawing.Point(219, 324);
             this.BtnDeleteChercheure.Name = "BtnDeleteChercheure";
             this.BtnDeleteChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnDeleteChercheure.TabIndex = 24;
@@ -84,7 +85,7 @@ namespace Directeur
             // 
             // BtnEditChercheure
             // 
-            this.BtnEditChercheure.Location = new System.Drawing.Point(111, 285);
+            this.BtnEditChercheure.Location = new System.Drawing.Point(219, 285);
             this.BtnEditChercheure.Name = "BtnEditChercheure";
             this.BtnEditChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnEditChercheure.TabIndex = 23;
@@ -103,7 +104,7 @@ namespace Directeur
             // 
             // BtnAddChercheure
             // 
-            this.BtnAddChercheure.Location = new System.Drawing.Point(3, 285);
+            this.BtnAddChercheure.Location = new System.Drawing.Point(110, 285);
             this.BtnAddChercheure.Name = "BtnAddChercheure";
             this.BtnAddChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnAddChercheure.TabIndex = 22;
@@ -289,7 +290,7 @@ namespace Directeur
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(300, 62);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(508, 246);
+            this.listView1.Size = new System.Drawing.Size(508, 285);
             this.listView1.TabIndex = 35;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -333,10 +334,21 @@ namespace Directeur
             this.password.Text = "Mot de passe";
             this.password.Width = 100;
             // 
+            // BtnView
+            // 
+            this.BtnView.Location = new System.Drawing.Point(110, 324);
+            this.BtnView.Name = "BtnView";
+            this.BtnView.Size = new System.Drawing.Size(75, 23);
+            this.BtnView.TabIndex = 36;
+            this.BtnView.Text = "Consulter";
+            this.BtnView.UseVisualStyleBackColor = true;
+            this.BtnView.Click += new System.EventHandler(this.BtnView_Click);
+            // 
             // Chercheur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnView);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnDeleteChercheure);
@@ -344,7 +356,7 @@ namespace Directeur
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnAddChercheure);
             this.Name = "Chercheur";
-            this.Size = new System.Drawing.Size(812, 319);
+            this.Size = new System.Drawing.Size(812, 350);
             this.Load += new System.EventHandler(this.Chercheur_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -384,5 +396,6 @@ namespace Directeur
         private System.Windows.Forms.ColumnHeader team;
         private System.Windows.Forms.ColumnHeader email;
         private System.Windows.Forms.ColumnHeader password;
+        private System.Windows.Forms.Button BtnView;
     }
 }

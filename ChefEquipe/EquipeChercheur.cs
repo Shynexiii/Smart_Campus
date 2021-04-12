@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace ChefEquipe
@@ -47,6 +48,13 @@ namespace ChefEquipe
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void BtnView_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(listView1.SelectedItems[0].SubItems[0].Text);
+            string url = $"http://localhost:54267/Profile/Index/{id}";
+            Process.Start(url);
         }
     }
 }

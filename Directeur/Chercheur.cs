@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Collections;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
 
 namespace Directeur
 {
@@ -158,6 +159,13 @@ namespace Directeur
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             AfficherChercheur();
+        }
+
+        private void BtnView_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(listView1.SelectedItems[0].SubItems[0].Text);
+            string url = $"http://localhost:54267/Profile/Index/{id}";
+            Process.Start(url);
         }
     }
 }

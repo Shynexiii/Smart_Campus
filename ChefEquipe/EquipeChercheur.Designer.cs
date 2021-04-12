@@ -40,6 +40,7 @@ namespace ChefEquipe
             this.laboratoire = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.team = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BtnView = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@ namespace ChefEquipe
             // 
             this.BtnRetirerChercheure.Location = new System.Drawing.Point(3, 56);
             this.BtnRetirerChercheure.Name = "BtnRetirerChercheure";
-            this.BtnRetirerChercheure.Size = new System.Drawing.Size(111, 41);
+            this.BtnRetirerChercheure.Size = new System.Drawing.Size(111, 35);
             this.BtnRetirerChercheure.TabIndex = 36;
             this.BtnRetirerChercheure.Text = "Retirer";
             this.BtnRetirerChercheure.UseVisualStyleBackColor = true;
@@ -128,10 +129,21 @@ namespace ChefEquipe
             this.email.Text = "Email";
             this.email.Width = 150;
             // 
+            // BtnView
+            // 
+            this.BtnView.Location = new System.Drawing.Point(3, 106);
+            this.BtnView.Name = "BtnView";
+            this.BtnView.Size = new System.Drawing.Size(111, 35);
+            this.BtnView.TabIndex = 38;
+            this.BtnView.Text = "Consulter";
+            this.BtnView.UseVisualStyleBackColor = true;
+            this.BtnView.Click += new System.EventHandler(this.BtnView_Click);
+            // 
             // EquipeChercheur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnView);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.BtnRetirerChercheure);
             this.Controls.Add(this.panel1);
@@ -155,5 +167,6 @@ namespace ChefEquipe
         private System.Windows.Forms.ColumnHeader role;
         private System.Windows.Forms.ColumnHeader laboratoire;
         private System.Windows.Forms.ColumnHeader team;
+        private System.Windows.Forms.Button BtnView;
     }
 }

@@ -47,9 +47,9 @@ namespace Chercheur
             this.description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.reference = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.create_at = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BtnAddProduction = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.create_at = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -222,6 +222,10 @@ namespace Chercheur
             this.type.Text = "Type";
             this.type.Width = 120;
             // 
+            // create_at
+            // 
+            this.create_at.Text = "Date";
+            // 
             // BtnAddProduction
             // 
             this.BtnAddProduction.Location = new System.Drawing.Point(3, 268);
@@ -240,10 +244,6 @@ namespace Chercheur
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(805, 50);
             this.panel1.TabIndex = 31;
-            // 
-            // create_at
-            // 
-            this.create_at.Text = "Date";
             // 
             // ProductionScientifique
             // 
