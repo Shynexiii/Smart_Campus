@@ -59,6 +59,8 @@ namespace Directeur
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BtnView = new System.Windows.Forms.Button();
+            this.CbGrade = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +77,7 @@ namespace Directeur
             // 
             // BtnDeleteChercheure
             // 
-            this.BtnDeleteChercheure.Location = new System.Drawing.Point(219, 324);
+            this.BtnDeleteChercheure.Location = new System.Drawing.Point(219, 353);
             this.BtnDeleteChercheure.Name = "BtnDeleteChercheure";
             this.BtnDeleteChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnDeleteChercheure.TabIndex = 24;
@@ -85,7 +87,7 @@ namespace Directeur
             // 
             // BtnEditChercheure
             // 
-            this.BtnEditChercheure.Location = new System.Drawing.Point(219, 285);
+            this.BtnEditChercheure.Location = new System.Drawing.Point(219, 314);
             this.BtnEditChercheure.Name = "BtnEditChercheure";
             this.BtnEditChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnEditChercheure.TabIndex = 23;
@@ -104,7 +106,7 @@ namespace Directeur
             // 
             // BtnAddChercheure
             // 
-            this.BtnAddChercheure.Location = new System.Drawing.Point(110, 285);
+            this.BtnAddChercheure.Location = new System.Drawing.Point(110, 314);
             this.BtnAddChercheure.Name = "BtnAddChercheure";
             this.BtnAddChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnAddChercheure.TabIndex = 22;
@@ -114,6 +116,8 @@ namespace Directeur
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CbGrade);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.CbTeam);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.TbPassword);
@@ -130,7 +134,7 @@ namespace Directeur
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(291, 217);
+            this.groupBox1.Size = new System.Drawing.Size(291, 246);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Créartion / Modification";
@@ -290,7 +294,7 @@ namespace Directeur
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(300, 62);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(508, 285);
+            this.listView1.Size = new System.Drawing.Size(508, 314);
             this.listView1.TabIndex = 35;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -336,13 +340,35 @@ namespace Directeur
             // 
             // BtnView
             // 
-            this.BtnView.Location = new System.Drawing.Point(110, 324);
+            this.BtnView.Location = new System.Drawing.Point(110, 353);
             this.BtnView.Name = "BtnView";
             this.BtnView.Size = new System.Drawing.Size(75, 23);
             this.BtnView.TabIndex = 36;
             this.BtnView.Text = "Consulter";
             this.BtnView.UseVisualStyleBackColor = true;
             this.BtnView.Click += new System.EventHandler(this.BtnView_Click);
+            // 
+            // CbGrade
+            // 
+            this.CbGrade.FormattingEnabled = true;
+            this.CbGrade.Items.AddRange(new object[] {
+            "",
+            "Chef d\'équipe",
+            "Chercheur"});
+            this.CbGrade.Location = new System.Drawing.Point(107, 216);
+            this.CbGrade.Name = "CbGrade";
+            this.CbGrade.Size = new System.Drawing.Size(150, 21);
+            this.CbGrade.TabIndex = 36;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(7, 217);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 17);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Grade";
             // 
             // Chercheur
             // 
@@ -356,7 +382,7 @@ namespace Directeur
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnAddChercheure);
             this.Name = "Chercheur";
-            this.Size = new System.Drawing.Size(812, 350);
+            this.Size = new System.Drawing.Size(812, 390);
             this.Load += new System.EventHandler(this.Chercheur_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -397,5 +423,7 @@ namespace Directeur
         private System.Windows.Forms.ColumnHeader email;
         private System.Windows.Forms.ColumnHeader password;
         private System.Windows.Forms.Button BtnView;
+        private System.Windows.Forms.ComboBox CbGrade;
+        private System.Windows.Forms.Label label8;
     }
 }

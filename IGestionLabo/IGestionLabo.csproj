@@ -91,6 +91,7 @@
     <Compile Include="Chercheur.cs" />
     <Compile Include="Equipe.cs" />
     <Compile Include="IGestionLabo.cs" />
+    <Compile Include="IGestionPrfu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

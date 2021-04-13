@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="fonctions.cs" />
+    <Compile Include="Grade.cs" />
     <Compile Include="Laboratoire.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

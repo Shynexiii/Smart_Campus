@@ -111,6 +111,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GradeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GradeView.Designer.cs">
+      <DependentUpon>GradeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="IGestionLaboImpl.cs" />
     <Compile Include="LaboratoireView.cs">
       <SubType>UserControl</SubType>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GradeView.resx">
+      <DependentUpon>GradeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LaboratoireView.resx">
       <DependentUpon>LaboratoireView.cs</DependentUpon>

@@ -159,7 +159,7 @@ namespace Directeur
             this.Controls.Add(this.labelEmail);
             this.Name = "LoginFormDir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginFormDir";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

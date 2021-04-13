@@ -159,7 +159,7 @@ namespace ChefEquipe
             this.Controls.Add(this.labelEmail);
             this.Name = "LoginFormChef";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginFormChef";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

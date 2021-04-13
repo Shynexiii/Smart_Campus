@@ -31,6 +31,7 @@ namespace Administrateur
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.BtnGrade = new System.Windows.Forms.Button();
             this.BtnLaboratoire = new System.Windows.Forms.Button();
             this.BtnRole = new System.Windows.Forms.Button();
             this.BtnEquipe = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@ namespace Administrateur
             this.laboratoireView1 = new Administrateur.LaboratoireView();
             this.equipeView1 = new Administrateur.EquipeView();
             this.chercheurView1 = new Administrateur.ChercheurView();
+            this.gradeView1 = new Administrateur.GradeView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,6 +69,7 @@ namespace Administrateur
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.BtnGrade);
             this.panel4.Controls.Add(this.BtnLaboratoire);
             this.panel4.Controls.Add(this.BtnRole);
             this.panel4.Controls.Add(this.BtnEquipe);
@@ -75,6 +78,16 @@ namespace Administrateur
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 380);
             this.panel4.TabIndex = 2;
+            // 
+            // BtnGrade
+            // 
+            this.BtnGrade.Location = new System.Drawing.Point(3, 172);
+            this.BtnGrade.Name = "BtnGrade";
+            this.BtnGrade.Size = new System.Drawing.Size(156, 35);
+            this.BtnGrade.TabIndex = 5;
+            this.BtnGrade.Text = "Grade";
+            this.BtnGrade.UseVisualStyleBackColor = true;
+            this.BtnGrade.Click += new System.EventHandler(this.BtnGrade_Click);
             // 
             // BtnLaboratoire
             // 
@@ -203,28 +216,36 @@ namespace Administrateur
             // 
             this.laboratoireView1.Location = new System.Drawing.Point(169, 3);
             this.laboratoireView1.Name = "laboratoireView1";
-            this.laboratoireView1.Size = new System.Drawing.Size(812, 337);
+            this.laboratoireView1.Size = new System.Drawing.Size(812, 390);
             this.laboratoireView1.TabIndex = 4;
             // 
             // equipeView1
             // 
             this.equipeView1.Location = new System.Drawing.Point(169, 3);
             this.equipeView1.Name = "equipeView1";
-            this.equipeView1.Size = new System.Drawing.Size(812, 350);
+            this.equipeView1.Size = new System.Drawing.Size(812, 390);
             this.equipeView1.TabIndex = 5;
             // 
             // chercheurView1
             // 
             this.chercheurView1.Location = new System.Drawing.Point(169, 3);
             this.chercheurView1.Name = "chercheurView1";
-            this.chercheurView1.Size = new System.Drawing.Size(812, 350);
+            this.chercheurView1.Size = new System.Drawing.Size(812, 390);
             this.chercheurView1.TabIndex = 6;
+            // 
+            // gradeView1
+            // 
+            this.gradeView1.Location = new System.Drawing.Point(169, 3);
+            this.gradeView1.Name = "gradeView1";
+            this.gradeView1.Size = new System.Drawing.Size(812, 390);
+            this.gradeView1.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.gradeView1);
             this.Controls.Add(this.roleView1);
             this.Controls.Add(this.laboratoireView1);
             this.Controls.Add(this.equipeView1);
@@ -267,6 +288,8 @@ namespace Administrateur
         private LaboratoireView laboratoireView1;
         private EquipeView equipeView1;
         private ChercheurView chercheurView1;
+        private System.Windows.Forms.Button BtnGrade;
+        private GradeView gradeView1;
     }
 }
 

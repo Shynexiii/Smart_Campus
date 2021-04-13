@@ -20,11 +20,12 @@ namespace Function
         }
         public ArrayList ConsulterChercheur()
         {
-            var query = $"SELECT p.id, p.fname, p.lname, r.role, l.code, t.name, p.email, p.password " +
+            var query = $"SELECT p.id, p.fname, p.lname, r.role, l.code, t.name, p.email, p.password, g.name " +
                 $"FROM profils p " +
                 $"JOIN roles r ON p.role_id = r.id " +
                 $"JOIN labs l ON p.lab_id = l.id " +
                 $"JOIN teams t ON p.team_id = t.id " +
+                $"JOIN grades g ON p.grade_id = g.id " +
                 $"ORDER BY p.id ASC";
 
             return new QueryBuilder().All(query);
@@ -85,6 +86,29 @@ namespace Function
             return new QueryBuilder().AllData(query);
         }
 
+        public ArrayList ConsulterGrade()
+        {
+            var query = $"SELECT * FROM grades";
+            return new QueryBuilder().All(query);
+        }
+        public bool CreerGrade(Grade grade)
+        {
+            string query = $"INSERT INTO grades (`name`) VALUES (\"{grade.Name}\");";
+            return new QueryBuilder().Create(query);
+        }
+
+        public bool ModifierGrade(Grade grade, int id)
+        {
+            var query = $"UPDATE grades SET `name`='{grade.Name}' WHERE `id`={id};";
+            return new QueryBuilder().Update(query);
+        }
+
+        public bool SupprimerGrade(int id)
+        {
+            var query = $"DELETE FROM grades WHERE `id`= {id};";
+            return new QueryBuilder().Delete(query);
+        }
+
         public Chercheur login(string email, string password, string role)
         {
             string query = $"SELECT * FROM profils WHERE email ='{email}' AND password ='{password}' AND role_id = '{role}';";
@@ -98,7 +122,7 @@ namespace Function
                 }
                 else
                 {
-                    chercheur = new Chercheur(value.GetString(2), value.GetString(1), value.GetInt32(3), value.GetInt32(4), value.GetInt32(5), value.GetString(6), value.GetString(7));
+                    chercheur = new Chercheur(value.GetString(2), value.GetString(1), value.GetInt32(3), value.GetInt32(4), value.GetInt32(5), value.GetString(6), value.GetString(7), value.GetInt32(8));
                 }
             }
             return chercheur;
@@ -123,7 +147,7 @@ namespace Function
         {
             string query = $"SELECT * FROM profils WHERE email = '{email}' AND password = '{password}';";
             var value = new QueryBuilder().AllData(query);
-            CurrentUser = new string[8];
+            CurrentUser = new string[9];
             while (value.Read())
             {
                 if (value.FieldCount == 0)

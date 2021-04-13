@@ -28,6 +28,7 @@ namespace IGestionLabo
         MySqlDataReader ConsulterRoleReader();
         MySqlDataReader ConsulterLaboratoireReader();
         MySqlDataReader ConsulterTeamReader();
+        MySqlDataReader ConsulterGradeReader();
 
     }
 }

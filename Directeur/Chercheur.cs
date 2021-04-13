@@ -38,11 +38,14 @@ namespace Directeur
                 CbLaboratoire.Items.Clear();
                 CbTeam.Text = "";
                 CbTeam.Items.Clear();
+                CbGrade.Text = "";
+                CbGrade.Items.Clear();
                 ArrayList rowList = Program.obj.ConsulterChercheur(Form1.Laboratoire_id);
 
                 MySqlDataReader role = Program.obj.ConsulterRoleReader();
                 MySqlDataReader labo = Program.obj.ConsulterLaboratoireReader();
                 MySqlDataReader team = Program.obj.ConsulterTeamReader();
+                MySqlDataReader grade = Program.obj.ConsulterGradeReader();
 
                 string laboName;
                 while (labo.Read())
@@ -64,6 +67,13 @@ namespace Directeur
                 {
                     teamName = (string)team[1];
                     CbTeam.Items.Add(teamName);
+                }
+
+                string GradeName;
+                while (grade.Read())
+                {
+                    GradeName = (string)grade[1];
+                    CbGrade.Items.Add(GradeName);
                 }
 
                 foreach (object[] row in rowList)
@@ -93,7 +103,8 @@ namespace Directeur
                 int id_lab = CbLaboratoire.SelectedIndex + 1;
                 int Role_id = CbRole.SelectedIndex + 1;
                 int Team_id = CbTeam.SelectedIndex + 1;
-                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(TbFirstName.Text, tbLastName.Text, Role_id, id_lab, Team_id, TbEmail.Text, TbPassword.Text);
+                int Grade_id = CbTeam.SelectedIndex + 1;
+                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(TbFirstName.Text, tbLastName.Text, Role_id, id_lab, Team_id, TbEmail.Text, TbPassword.Text, Grade_id);
                 bool value = Program.obj.CreerChercheur(chercheur);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
@@ -115,10 +126,11 @@ namespace Directeur
             int Role_id = CbRole.SelectedIndex + 1;
             int id_lab = CbLaboratoire.SelectedIndex + 1;
             int Team_id = CbTeam.SelectedIndex + 1;
+            int Grade_id = CbTeam.SelectedIndex + 1;
             int id = Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             try
             {
-                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(LastName, FirstName, Role_id, id_lab, Team_id, TbEmail.Text, TbPassword.Text);
+                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(LastName, FirstName, Role_id, id_lab, Team_id, TbEmail.Text, TbPassword.Text, Grade_id);
                 bool value = Program.obj.ModifierChercheur(chercheur, id);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
@@ -138,6 +150,7 @@ namespace Directeur
             CbTeam.Text = listView1.SelectedItems[0].SubItems[5].Text;
             TbEmail.Text = listView1.SelectedItems[0].SubItems[6].Text;
             TbPassword.Text = listView1.SelectedItems[0].SubItems[7].Text;
+            CbGrade.Text = listView1.SelectedItems[0].SubItems[8].Text;
 
         }
 

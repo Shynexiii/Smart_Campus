@@ -12,8 +12,9 @@ namespace IGestionLabo
         public int Team { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public int Grade { get; set; }
 
-        public Chercheur(string nom, string prenom, int role, int laboratoire, int team, string email, string password)
+        public Chercheur(string nom, string prenom, int role, int laboratoire, int team, string email, string password, int grade)
         {
             Nom = nom;
             Prenom = prenom;
@@ -22,6 +23,7 @@ namespace IGestionLabo
             Team = team;
             Email = email;
             Password = password;
+            Grade = grade;
         }
     }
 }

@@ -1,26 +1,33 @@
-﻿using System;
+﻿using Function;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Function;
 
 namespace Administrateur
 {
-    public partial class RoleView : UserControl
+    public partial class GradeView : UserControl
     {
-        public RoleView()
+        public GradeView()
         {
             InitializeComponent();
-            AfficherRole();
+            AfficherGrade();
         }
 
-        private void BtnAddRole_Click(object sender, EventArgs e)
+        private void BtnAddGrade_Click(object sender, EventArgs e)
         {
             try
             {
-                Role role = new Role(TbRoleName.Text);
-                bool value = new Admin().CreerRole(role);
+                Grade grade = new Grade(TbGradeName.Text);
+                bool value = new Admin().CreerGrade(grade);
                 MessageBox.Show(value.ToString());
-                AfficherRole();
+                AfficherGrade();
             }
             catch (Exception ex)
             {
@@ -28,16 +35,15 @@ namespace Administrateur
             }
         }
 
-        private void BtnEditRole_Click(object sender, EventArgs e)
+        private void BtnEditGrade_Click(object sender, EventArgs e)
         {
-            string RoleName = TbRoleName.Text;
             int id = Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             try
             {
-                Role role = new Role(RoleName);
-                bool value = new Admin().ModifierRole(role, id);
+                Grade grade = new Grade(TbGradeName.Text);
+                bool value = new Admin().ModifierGrade(grade, id);
                 MessageBox.Show(value.ToString());
-                AfficherRole();
+                AfficherGrade();
             }
             catch (Exception ex)
             {
@@ -45,14 +51,14 @@ namespace Administrateur
             }
         }
 
-        private void BtnDeleteRole_Click(object sender, EventArgs e)
+        private void BtnDeleteGrade_Click(object sender, EventArgs e)
         {
             int id = Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             try
             {
-                bool value = new Admin().SupprimerRole(id);
+                bool value = new Admin().SupprimerGrade(id);
                 MessageBox.Show(value.ToString());
-                AfficherRole();
+                AfficherGrade();
             }
             catch (Exception ex)
             {
@@ -62,16 +68,16 @@ namespace Administrateur
 
         private void listView1_Click(object sender, EventArgs e)
         {
-            TbRoleName.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            TbGradeName.Text = listView1.SelectedItems[0].SubItems[1].Text;
         }
 
-        public void AfficherRole()
+        public void AfficherGrade()
         {
             try
             {
-                TbRoleName.Text = "";
+                TbGradeName.Text = "";
                 listView1.Items.Clear();
-                ArrayList rowList = new Admin().ConsulterRole();
+                ArrayList rowList = new Admin().ConsulterGrade();
 
                 foreach (object[] row in rowList)
                 {

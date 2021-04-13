@@ -41,6 +41,7 @@ namespace Administrateur
             this.team = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.grade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelChercheure = new System.Windows.Forms.Label();
             this.CbRole = new System.Windows.Forms.ComboBox();
@@ -50,6 +51,8 @@ namespace Administrateur
             this.TbFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CbGrade = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.CbTeam = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TbPassword = new System.Windows.Forms.TextBox();
@@ -58,7 +61,6 @@ namespace Administrateur
             this.label5 = new System.Windows.Forms.Label();
             this.CbLaboratoire = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.profile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BtnView = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -66,7 +68,7 @@ namespace Administrateur
             // 
             // BtnAddChercheure
             // 
-            this.BtnAddChercheure.Location = new System.Drawing.Point(110, 285);
+            this.BtnAddChercheure.Location = new System.Drawing.Point(110, 314);
             this.BtnAddChercheure.Name = "BtnAddChercheure";
             this.BtnAddChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnAddChercheure.TabIndex = 28;
@@ -91,7 +93,7 @@ namespace Administrateur
             // 
             // BtnDeleteChercheure
             // 
-            this.BtnDeleteChercheure.Location = new System.Drawing.Point(219, 324);
+            this.BtnDeleteChercheure.Location = new System.Drawing.Point(219, 353);
             this.BtnDeleteChercheure.Name = "BtnDeleteChercheure";
             this.BtnDeleteChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnDeleteChercheure.TabIndex = 30;
@@ -101,7 +103,7 @@ namespace Administrateur
             // 
             // BtnEditChercheure
             // 
-            this.BtnEditChercheure.Location = new System.Drawing.Point(219, 285);
+            this.BtnEditChercheure.Location = new System.Drawing.Point(219, 314);
             this.BtnEditChercheure.Name = "BtnEditChercheure";
             this.BtnEditChercheure.Size = new System.Drawing.Size(75, 23);
             this.BtnEditChercheure.TabIndex = 29;
@@ -121,18 +123,17 @@ namespace Administrateur
             this.team,
             this.email,
             this.password,
-            this.profile});
+            this.grade});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(300, 62);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(508, 285);
+            this.listView1.Size = new System.Drawing.Size(508, 314);
             this.listView1.TabIndex = 26;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
-            this.listView1.Leave += new System.EventHandler(this.listView1_Leave);
             // 
             // id
             // 
@@ -156,6 +157,11 @@ namespace Administrateur
             // 
             this.password.Text = "Mot de passe";
             this.password.Width = 100;
+            // 
+            // grade
+            // 
+            this.grade.Text = "Grade";
+            this.grade.Width = 100;
             // 
             // panel1
             // 
@@ -232,6 +238,8 @@ namespace Administrateur
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CbGrade);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.CbTeam);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.TbPassword);
@@ -248,10 +256,29 @@ namespace Administrateur
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(291, 217);
+            this.groupBox1.Size = new System.Drawing.Size(291, 247);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Créartion / Modification";
+            // 
+            // CbGrade
+            // 
+            this.CbGrade.FormattingEnabled = true;
+            this.CbGrade.Location = new System.Drawing.Point(107, 216);
+            this.CbGrade.MaxDropDownItems = 10;
+            this.CbGrade.Name = "CbGrade";
+            this.CbGrade.Size = new System.Drawing.Size(150, 21);
+            this.CbGrade.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(7, 217);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 17);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Grade";
             // 
             // CbTeam
             // 
@@ -326,14 +353,9 @@ namespace Administrateur
             this.label4.TabIndex = 13;
             this.label4.Text = "Laboratoire";
             // 
-            // profile
-            // 
-            this.profile.Text = "Profile";
-            this.profile.Width = 100;
-            // 
             // BtnView
             // 
-            this.BtnView.Location = new System.Drawing.Point(110, 324);
+            this.BtnView.Location = new System.Drawing.Point(110, 353);
             this.BtnView.Name = "BtnView";
             this.BtnView.Size = new System.Drawing.Size(75, 23);
             this.BtnView.TabIndex = 31;
@@ -353,7 +375,7 @@ namespace Administrateur
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ChercheurView";
-            this.Size = new System.Drawing.Size(812, 350);
+            this.Size = new System.Drawing.Size(812, 390);
             this.Load += new System.EventHandler(this.ChercheurView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -394,7 +416,9 @@ namespace Administrateur
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TbEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ColumnHeader profile;
+        private System.Windows.Forms.ColumnHeader grade;
         private System.Windows.Forms.Button BtnView;
+        private System.Windows.Forms.ComboBox CbGrade;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -14,6 +14,7 @@ namespace Administrateur
             equipeView1.Hide();
             roleView1.Hide();
             laboratoireView1.Hide();
+            gradeView1.Hide();
             chercheurView1.AfficherChercheur();
             LabelNom.Text = user.Nom;
             LabelPrenom.Text = user.Prenom;
@@ -26,6 +27,7 @@ namespace Administrateur
             equipeView1.Hide();
             roleView1.Hide();
             laboratoireView1.Hide();
+            gradeView1.Hide();
             chercheurView1.AfficherChercheur();
         }
 
@@ -35,6 +37,7 @@ namespace Administrateur
             equipeView1.Show();
             roleView1.Hide();
             laboratoireView1.Hide();
+            gradeView1.Hide();
             equipeView1.AfficherEquipe();
         }
 
@@ -45,6 +48,7 @@ namespace Administrateur
             roleView1.Show();
             laboratoireView1.Hide();
             roleView1.AfficherRole();
+            gradeView1.Hide();
         }
 
         private void BtnLaboratoire_Click(object sender, EventArgs e)
@@ -53,6 +57,7 @@ namespace Administrateur
             equipeView1.Hide();
             roleView1.Hide();
             laboratoireView1.Show();
+            gradeView1.Hide();
             laboratoireView1.AfficherLaboratoire();
         }
 
@@ -64,6 +69,16 @@ namespace Administrateur
         private void Form1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnGrade_Click(object sender, EventArgs e)
+        {
+            chercheurView1.Hide();
+            equipeView1.Hide();
+            roleView1.Hide();
+            laboratoireView1.Hide();
+            gradeView1.Show();
+            gradeView1.AfficherGrade();
         }
     }
 }

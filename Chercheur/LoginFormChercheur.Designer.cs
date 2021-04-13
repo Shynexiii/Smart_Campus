@@ -159,7 +159,7 @@ namespace Chercheur
             this.Controls.Add(this.labelEmail);
             this.Name = "LoginFormChercheur";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginFormChercheur";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

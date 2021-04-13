@@ -29,10 +29,20 @@ namespace Administrateur
                 CbLaboratoire.Items.Clear();
                 CbTeam.Text = "";
                 CbTeam.Items.Clear();
+                CbGrade.Text = "";
+                CbGrade.Items.Clear();
                 ArrayList rowList = new Admin().ConsulterChercheur();
                 MySqlDataReader role = new Admin().ConsulterTableReader("roles");
                 MySqlDataReader labo = new Admin().ConsulterTableReader("labs");
                 MySqlDataReader team = new Admin().ConsulterTableReader("teams");
+                MySqlDataReader grade = new Admin().ConsulterTableReader("grades");
+
+                string GradeName;
+                while (grade.Read())
+                {
+                    GradeName = (string)grade[1];
+                    CbGrade.Items.Add(GradeName);
+                }
 
                 string laboName;
                 while (labo.Read())
@@ -87,7 +97,8 @@ namespace Administrateur
                 int id_lab = CbLaboratoire.SelectedIndex + 1;
                 int Role_id = CbRole.SelectedIndex + 1;
                 int Team_id = CbTeam.SelectedIndex + 1;
-                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(TbFirstName.Text, tbLastName.Text, Role_id, id_lab, Team_id, TbEmail.Text, TbPassword.Text);
+                int Grade_id = CbGrade.SelectedIndex + 1;
+                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(TbFirstName.Text, tbLastName.Text, Role_id, id_lab, Team_id, TbEmail.Text, TbPassword.Text, Grade_id);
                 bool value = new IGestionLaboImpl().CreerChercheur(chercheur);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
@@ -120,10 +131,11 @@ namespace Administrateur
             int Role_id = CbRole.SelectedIndex + 1;
             int id_lab = CbLaboratoire.SelectedIndex + 1;
             int Team_id = CbTeam.SelectedIndex + 1;
+            int Grade_id = CbGrade.SelectedIndex + 1;
             int id = Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             try
             {
-                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(LastName, FirstName, Role_id, id_lab, Team_id, TbEmail.Text, TbPassword.Text);
+                IGestionLabo.Chercheur chercheur = new IGestionLabo.Chercheur(LastName, FirstName, Role_id, id_lab, Team_id, TbEmail.Text, TbPassword.Text, Grade_id);
                 bool value = new IGestionLaboImpl().ModifierChercheur(chercheur, id);
                 MessageBox.Show(value.ToString());
                 AfficherChercheur();
@@ -133,11 +145,6 @@ namespace Administrateur
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void ChercheurView_Load(object sender, EventArgs e)
@@ -155,17 +162,13 @@ namespace Administrateur
             CbTeam.Text = listView1.SelectedItems[0].SubItems[5].Text;
             TbEmail.Text = listView1.SelectedItems[0].SubItems[6].Text;
             TbPassword.Text = listView1.SelectedItems[0].SubItems[7].Text;
+            CbGrade.Text = listView1.SelectedItems[0].SubItems[8].Text;
             BtnAddChercheure.Enabled = false;
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             AfficherChercheur();
-        }
-
-        private void listView1_Leave(object sender, EventArgs e)
-        {
-            BtnAddChercheure.Enabled = true;
         }
 
         private void BtnView_Click(object sender, EventArgs e)
