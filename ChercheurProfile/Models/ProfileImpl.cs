@@ -13,11 +13,12 @@ namespace ChercheurProfile.Models
         public List<Profile> GetProfile(int id)
         {
             List<Profile> profile = new List<Profile>();
-            string query = $"SELECT profils.id, profils.lname, profils.fname, profils.email, roles.role, labs.code, teams.name " +
+            string query = $"SELECT profils.id, profils.lname, profils.fname, profils.email, roles.role, labs.code, teams.name, grades.name " +
                 $"FROM profils " +
                 $"JOIN roles ON roles.id = profils.role_id " +
                 $"JOIN labs ON labs.id = profils.lab_id " +
                 $"JOIN teams ON teams.id = profils.team_id " +
+                $"JOIN grades ON grades.id = profils.grade_id" +
                 $"WHERE profils.id = {id} " +
                 $"ORDER BY profils.id ASC";
             DataTable dataTable = new ProductionScientifiqueImpl().Connection(query);
@@ -33,6 +34,7 @@ namespace ChercheurProfile.Models
                     Role = Convert.ToString(datarow["role"]),
                     Laboratoire = Convert.ToString(datarow["code"]),
                     Team = Convert.ToString(datarow["name"]),
+                    Grade = Convert.ToString(datarow["grade_name"])
                 });
             }
 

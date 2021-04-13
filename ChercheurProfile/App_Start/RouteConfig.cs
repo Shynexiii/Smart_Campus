@@ -13,9 +13,14 @@ namespace ChercheurProfile
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
-                "Home",
-                "",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "Home1",
+                url: "Profile",
+                defaults: new { controller = "Profile", action = "Home", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Home",
+                url: "Profile/Index",
+                defaults: new { controller = "Profile", action = "Home", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Default",

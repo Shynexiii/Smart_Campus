@@ -14,5 +14,6 @@ namespace ChercheurProfile.Models
         public string Role { get; set; }
         public string Laboratoire { get; set; }
         public string Team { get; set; }
+        public string Grade { get; set; }
     }
 }
