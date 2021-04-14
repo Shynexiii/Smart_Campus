@@ -20,7 +20,7 @@ namespace Function
         }
         public ArrayList ConsulterChercheur()
         {
-            var query = $"SELECT p.id, p.fname, p.lname, r.role, l.code, t.name, p.email, p.password, g.name " +
+            var query = $"SELECT p.id, p.fname, p.lname, r.role, l.code, t.name, p.email, p.password, g.grade_name " +
                 $"FROM profils p " +
                 $"JOIN roles r ON p.role_id = r.id " +
                 $"JOIN labs l ON p.lab_id = l.id " +
@@ -93,13 +93,13 @@ namespace Function
         }
         public bool CreerGrade(Grade grade)
         {
-            string query = $"INSERT INTO grades (`name`) VALUES (\"{grade.Name}\");";
+            string query = $"INSERT INTO grades (`grade_name`) VALUES (\"{grade.Name}\");";
             return new QueryBuilder().Create(query);
         }
 
         public bool ModifierGrade(Grade grade, int id)
         {
-            var query = $"UPDATE grades SET `name`='{grade.Name}' WHERE `id`={id};";
+            var query = $"UPDATE grades SET `grade_name`='{grade.Name}' WHERE `id`={id};";
             return new QueryBuilder().Update(query);
         }
 

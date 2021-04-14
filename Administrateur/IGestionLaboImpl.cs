@@ -11,7 +11,7 @@ namespace Administrateur
 
         public ArrayList ConsulterChercheur(int id)
         {
-            var query = $"SELECT p.id, p.fname, p.lname, r.role, l.code, t.name, p.email, p.password, g.name " +
+            var query = $"SELECT p.id, p.fname, p.lname, r.role, l.code, t.name, p.email, p.password, g.grade_name " +
                 $"FROM profils p " +
                 $"JOIN roles r ON p.role_id = r.id " +
                 $"JOIN labs l ON p.lab_id = l.id " +

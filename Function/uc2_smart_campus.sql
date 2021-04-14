@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 12 avr. 2021 à 21:08
+-- Généré le : mer. 14 avr. 2021 à 22:02
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.16
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `uc2_smart_campus`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `grades`
+--
+
+CREATE TABLE `grades` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `grade_name` varchar(255) CHARACTER SET latin1 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `grades`
+--
+
+INSERT INTO `grades` (`id`, `grade_name`) VALUES
+(1, 'Maître de conférence B'),
+(2, 'Doctorant'),
+(3, 'Magister'),
+(4, 'Maître de conférence A'),
+(5, 'Professeur');
 
 -- --------------------------------------------------------
 
@@ -83,31 +105,33 @@ CREATE TABLE `profils` (
   `lab_id` int(10) UNSIGNED DEFAULT '1',
   `team_id` int(10) UNSIGNED DEFAULT '1',
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `grade_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `profils`
 --
 
-INSERT INTO `profils` (`id`, `fname`, `lname`, `role_id`, `lab_id`, `team_id`, `email`, `password`) VALUES
-(1, 'Chercheur 1', 'Chercheur 1', 1, 1, 1, 'Chercheur1@gmail.com', 'Chercheur1'),
-(2, 'Chercheur 2', 'Chercheur 2', 2, 2, 2, 'Chercheur2@gmail.com', 'Chercheur2'),
-(3, 'Chercheur 3', 'Chercheur 3', 3, 2, 2, 'Chercheur3@gmail.com', 'Chercheur3'),
-(4, 'Chercheur 4', 'Chercheur 4', 2, 2, 2, 'Chercheur4@gmail.com', 'Chercheur4'),
-(5, 'Chercheur 5', 'Chercheur 5', 2, 2, 2, 'Chercheur5@gmail.com', 'Chercheur5'),
-(6, 'Chercheur 6', 'Chercheur 6', 3, 1, 1, 'Chercheur6@gmail.com', 'Chercheur6'),
-(7, 'Chercheur 7', 'Chercheur 7', 2, 1, 1, 'chercheur7@gmail.com', 'chercheur7'),
-(8, 'Chercheur 8', 'Chercheur 5', 2, 1, 1, 'Chercheur8@gmail.com', 'Chercheur8'),
-(9, 'Chercheur 9', 'Chercheur 9', 2, 1, 1, 'Chercheur9@gmail.com', 'Chercheur9'),
-(10, 'Chercheur 10', 'Chercheur 10', 2, 1, 1, 'Chercheur10@gmail.com', 'Chercheur10'),
-(11, 'Chercheur 11', 'Chercheur 11', 3, 1, 2, 'Chercheur11@gmail.com', 'Chercheur11'),
-(12, 'Chercheur 12', 'Chercheur 12', 2, 1, 2, 'Chercheur12@gmail.com', 'Chercheur12'),
-(13, 'Chercheur 13', 'Chercheur 13', 2, 1, 2, 'Chercheur13@gmail.com', 'Chercheur13'),
-(14, 'Chercheur 14', 'Chercheur 14', 2, 1, 2, 'Chercheur14@gmail.com', 'Chercheur14'),
-(15, 'Chercheur 15', 'Chercheur 15', 4, 1, 1, 'Chercheur15@gmail.com', 'Chercheur15'),
-(16, 'Chercheur 16', 'Chercheur 16', 4, 2, 1, 'Chercheur16@gmail.com', 'Chercheur16'),
-(17, 'Chercheur 17', 'Chercheur 17', 4, 3, 1, 'chercheur17@gmail.com', 'Chercheur17');
+INSERT INTO `profils` (`id`, `fname`, `lname`, `role_id`, `lab_id`, `team_id`, `email`, `password`, `grade_id`) VALUES
+(1, 'Chercheur 1', 'Chercheur 1', 1, 1, 1, 'Chercheur1@gmail.com', 'Chercheur1', 1),
+(2, 'Chercheur 2', 'Chercheur 2', 2, 2, 2, 'Chercheur2@gmail.com', 'Chercheur2', 3),
+(3, 'Chercheur 3', 'Chercheur 3', 3, 2, 2, 'Chercheur3@gmail.com', 'Chercheur3', 3),
+(4, 'Chercheur 4', 'Chercheur 4', 2, 2, 2, 'Chercheur4@gmail.com', 'Chercheur4', 4),
+(5, 'Chercheur 5', 'Chercheur 5', 2, 2, 2, 'Chercheur5@gmail.com', 'Chercheur5', 2),
+(6, 'Chercheur 6', 'Chercheur 6', 3, 1, 1, 'Chercheur6@gmail.com', 'Chercheur6', 4),
+(7, 'Chercheur 7', 'Chercheur 7', 2, 1, 1, 'chercheur7@gmail.com', 'chercheur7', 4),
+(8, 'Chercheur 8', 'Chercheur 5', 2, 1, 1, 'Chercheur8@gmail.com', 'Chercheur8', 1),
+(9, 'Chercheur 9', 'Chercheur 9', 2, 1, 1, 'Chercheur9@gmail.com', 'Chercheur9', 2),
+(10, 'Chercheur 10', 'Chercheur 10', 2, 1, 1, 'Chercheur10@gmail.com', 'Chercheur10', 1),
+(11, 'Chercheur 11', 'Chercheur 11', 3, 1, 2, 'Chercheur11@gmail.com', 'Chercheur11', 3),
+(12, 'Chercheur 12', 'Chercheur 12', 2, 1, 2, 'Chercheur12@gmail.com', 'Chercheur12', 2),
+(13, 'Chercheur 13', 'Chercheur 13', 2, 1, 2, 'Chercheur13@gmail.com', 'Chercheur13', 4),
+(14, 'Chercheur 14', 'Chercheur 14', 2, 1, 2, 'Chercheur14@gmail.com', 'Chercheur14', 1),
+(15, 'Chercheur 15', 'Chercheur 15', 4, 1, 1, 'Chercheur15@gmail.com', 'Chercheur15', 5),
+(16, 'Chercheur 16', 'Chercheur 16', 4, 2, 1, 'Chercheur16@gmail.com', 'Chercheur16', 5),
+(17, 'Chercheur 17', 'Chercheur 17', 4, 3, 1, 'chercheur17@gmail.com', 'Chercheur17', 5),
+(18, 'John', 'Doe', 1, 1, 1, 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -158,6 +182,12 @@ INSERT INTO `teams` (`id`, `name`, `lab_id`) VALUES
 --
 
 --
+-- Index pour la table `grades`
+--
+ALTER TABLE `grades`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `labs`
 --
 ALTER TABLE `labs`
@@ -178,7 +208,8 @@ ALTER TABLE `profils`
   ADD UNIQUE KEY `Index 5` (`email`),
   ADD KEY `Index 4` (`team_id`),
   ADD KEY `profils_ibfk_1` (`role_id`),
-  ADD KEY `profils_ibfk_2` (`lab_id`);
+  ADD KEY `profils_ibfk_2` (`lab_id`),
+  ADD KEY `FK_profils_grades` (`grade_id`);
 
 --
 -- Index pour la table `roles`
@@ -198,6 +229,12 @@ ALTER TABLE `teams`
 --
 
 --
+-- AUTO_INCREMENT pour la table `grades`
+--
+ALTER TABLE `grades`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT pour la table `labs`
 --
 ALTER TABLE `labs`
@@ -213,7 +250,7 @@ ALTER TABLE `prod_sci`
 -- AUTO_INCREMENT pour la table `profils`
 --
 ALTER TABLE `profils`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -241,9 +278,10 @@ ALTER TABLE `prod_sci`
 -- Contraintes pour la table `profils`
 --
 ALTER TABLE `profils`
+  ADD CONSTRAINT `FK_profils_grades` FOREIGN KEY (`grade_id`) REFERENCES `grades` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_profils_teams` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `profils_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `profils_ibfk_2` FOREIGN KEY (`lab_id`) REFERENCES `labs` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `profils_ibfk_2` FOREIGN KEY (`lab_id`) REFERENCES `labs` (`id`);
 
 --
 -- Contraintes pour la table `teams`
